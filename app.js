@@ -1,14 +1,10 @@
 var express = require('express');
 var app = express();
 
-
-
 app.use(express.static("./"));
 
 app.get('/blogs', function(req, res) {
-  timelineBuilder();
-  console.log(timelineArray);
-  res.json(timelineArray);
+  res.json(allBlogs);
 });
 
 app.post('/', function(req, res) {
@@ -17,95 +13,41 @@ app.post('/', function(req, res) {
 
 app.listen(8080);
 
-
-
-var allUsers = [
-    {
-        username: "Arun",
-        userpassword: "123",
-        userimage: "ARUN IMAGE",
-        tags: ["ISIS","MOVIES","POETRY"],
-        blogs: [
+var allBlogs = [
             {
                 blogtitle: "BLOG TITLE",
-                blogimage: "BLANK IMAGE",
-                blogcontent: "BLOG CONTENT",
+                blogimage: "blog.jpeg",
+                blogcontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 tag:"ISIS"
             },
             {
                 blogtitle: "BLOG TITLE",
-                blogimage: "BLANK IMAGE",
-                blogcontent: "BLOG CONTENT",
+                blogimage: "blog.jpeg",
+                blogcontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 tag:"MOVIES"
-            }
-        ]
-    },
-    {
-        username: "BOB",
-        userpassword: "12345",
-        userimage: "ARUN IMAGE",
-        tags: ["MONEY","OBAMA","POLITICS"],
-        blogs: [
+            },
             {
                 blogtitle: "BLOG TITLE",
-                blogimage: "BLANK IMAGE",
-                blogcontent: "BLOG CONTENT",
+                blogimage: "blog.jpeg",
+                blogcontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 tag:"MONEY"
             },
             {
                 blogtitle: "BLOG TITLE",
-                blogimage: "BLANK IMAGE",
-                blogcontent: "BLOG CONTENT",
+                blogimage: "blog.jpeg",
+                blogcontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 tag:"ISIS"
-            }
-        ]
-    },
-    {
-        username: "SALLY",
-        userpassword: "12345",
-        userimage: "ARUN IMAGE",
-        tags: ["MONEY","OBAMA","POLITICS"],
-        blogs: [
+            },
             {
                 blogtitle: "BLOG TITLE",
-                blogimage: "BLANK IMAGE",
-                blogcontent: "BLOG CONTENT",
+                blogimage: "blog.jpeg",
+                blogcontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 tag:"MONEY"
             },
             {
                 blogtitle: "BLOG TITLE",
-                blogimage: "BLANK IMAGE",
-                blogcontent: "BLOG CONTENT",
+                blogimage: "blog.jpeg",
+                blogcontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 tag:"ISIS"
-            },
-            {
-                blogtitle: "BLOG TITLE",
-                blogimage: "BLANK IMAGE",
-                blogcontent: "BLOG CONTENT",
-                tag:"ISIS"
-            },
-            {
-                blogtitle: "BLOG TITLE",
-                blogimage: "BLANK IMAGE",
-                blogcontent: "BLOG CONTENT",
-                tag:"OBAMA"
             }
-        ]
-    }
 ];
-
-// ONLY THE  FOLLOWED TAGS SHOULD BE APPENDED TO THE TIMELINE BY DEFAULT
-
-
-// FUNCTION THAT LOOKS THROUGH ALL USERS AND THEIR POSTS, AND MATCHES WITH CURRENT USERS TAGS
-
-var timelineArray = [];
-
-var timelineBuilder = function() {
-        for (var j = 0; j < allUsers.length; j++) {
-            for (var k=0; k < allUsers[j].blogs.length; k++){
-                    timelineArray.push(allUsers[j].blogs[k]);
-            }
-        }
-
-};
