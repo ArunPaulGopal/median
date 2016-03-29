@@ -8,7 +8,7 @@ app.use(express.static("./"));
 app.get('/blogs', function(req, res) {
   timelineBuilder();
   console.log(timelineArray);
-  res.send();
+  res.json(timelineArray);
 });
 
 app.post('/', function(req, res) {
