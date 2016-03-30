@@ -11,6 +11,7 @@ $(document).ready(function() {
             var myData = JSON.parse(xhr.responseText);
             blogBuilder(myData);
         })
+        $('#timelinebutton').addClass("btn-primary");
     });
 
     var blogBuilder = function(array){
@@ -48,10 +49,9 @@ $(document).ready(function() {
     }
 
     $('#blogsbutton').click(function(){
-        $('#blogsbutton').toggleClass("hide");
         $('#timeline').toggleClass("hide");
-        $('#timelinebutton').toggleClass("hide");
         $('#yourblogs').toggleClass("hide");
+        $('#yourblogresults').empty();
         var xhr = new XMLHttpRequest();
         xhr.open('GET','/yourblogs');
         xhr.send(null);
@@ -59,6 +59,9 @@ $(document).ready(function() {
             var myData = JSON.parse(xhr.responseText);
             myBlogs(myData);
         })
+        $('#blogsbutton').addClass("btn-primary");
+        $('#timelinebutton').removeClass("btn-primary");
+        $('#write').removeClass("btn-primary");
     });
 
     var myBlogs = function(array){
@@ -96,9 +99,18 @@ $(document).ready(function() {
     }
 
     $('#timelinebutton').click(function(){
-        $('#blogsbutton').toggleClass("hide");
         $('#timeline').toggleClass("hide");
-        $('#timelinebutton').toggleClass("hide");
         $('#yourblogs').toggleClass("hide");
+        $('#blogresults').empty();
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','/blogs');
+        xhr.send(null);
+        xhr.addEventListener('load',function(){
+            var myData = JSON.parse(xhr.responseText);
+            blogBuilder(myData);
+        })
+        $('#timelinebutton').addClass("btn-primary");
+        $('#blogsbutton').removeClass("btn-primary");
+        $('#write').removeClass("btn-primary");
     });
 });

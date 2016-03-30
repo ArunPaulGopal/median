@@ -11,7 +11,7 @@ app.get('/yourblogs', function(req, res) {
   res.json(myBlogs);
 });
 
-app.post('/', function(req, res) {
+app.get('/addblogs', function(req, res) {
 
 });
 
