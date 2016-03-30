@@ -19,10 +19,39 @@
         </div>
       </div>
     </div>
+    <div class="container hide" id="navbar">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <form class="navbar-form navbar-left" role="search">
+            <i class="fa fa-medium fa-3x"></i>
+          </form>
+          <form class="navbar-form navbar-right" role="search">
+            <button class="btn btn-default" id="write">Write a Blog</button>
+            <button class="btn btn-default" id="blogsbutton">Your Blogs</button>
+            <button class="btn btn-default hide" id="timelinebutton">Timeline</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+    <div class="container hide" id="yourblogs">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="panel panel-primary">
+            <strong><h3 class="text-center">Your Blog Posts</h3></strong>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12" id="yourblogresults">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container hide" id="timeline">
         <div class="row">
             <div class="col-md-9">
-              <div class="panel panel-primary" id="blogpanel">
+              <div class="panel panel-primary">
                 <strong><h3 class="text-center">Blog Posts</h3></strong>
                 <div class="panel-body">
                   <div class="row">

@@ -2,6 +2,7 @@ $(document).ready(function() {
     $('#enter').click(function(){
         $('#timeline').toggleClass("hide");
         $('#welcome').toggleClass("hide");
+        $('#navbar').toggleClass("hide");
         var xhr = new XMLHttpRequest();
         xhr.open('GET','/blogs');
         xhr.send(null);
@@ -46,7 +47,18 @@ $(document).ready(function() {
     }
 });
 
+$('#blogsbutton').click(function(){
+    $('#timeline').toggleClass("hide");
+    $('#timelinebutton').toggleClass("hide");
 
+    $('#yourblogs').toggleClass("hide");
 
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET','/yourblogs');
+    xhr.send(null);
+    xhr.addEventListener('load',function(){
+        var myData = JSON.parse(xhr.responseText);
 
-     
+    })
+    $('#blogsbutton').toggleClass("hide");
+});
