@@ -49,8 +49,9 @@ $(document).ready(function() {
     }
 
     $('#blogsbutton').click(function(){
-        $('#timeline').toggleClass("hide");
-        $('#yourblogs').toggleClass("hide");
+        $('#timeline').addClass("hide");
+        $('#writeblogs').addClass("hide");
+        $('#yourblogs').removeClass("hide");
         $('#yourblogresults').empty();
         var xhr = new XMLHttpRequest();
         xhr.open('GET','/yourblogs');
@@ -99,8 +100,9 @@ $(document).ready(function() {
     }
 
     $('#timelinebutton').click(function(){
-        $('#timeline').toggleClass("hide");
-        $('#yourblogs').toggleClass("hide");
+        $('#timeline').removeClass("hide");
+        $('#yourblogs').addClass("hide");
+        $('#writeblogs').addClass("hide");
         $('#blogresults').empty();
         var xhr = new XMLHttpRequest();
         xhr.open('GET','/blogs');
@@ -109,6 +111,15 @@ $(document).ready(function() {
             var myData = JSON.parse(xhr.responseText);
             blogBuilder(myData);
         })
+        $('#timelinebutton').addClass("btn-primary");
+        $('#blogsbutton').removeClass("btn-primary");
+        $('#writebutton').removeClass("btn-primary");
+    });
+
+    $('#writebutton').click(function(){
+        $('#timeline').addClass("hide");
+        $('#yourblogs').addClass("hide");
+        $('#writeblogs').removeClass("hide");
         $('#timelinebutton').addClass("btn-primary");
         $('#blogsbutton').removeClass("btn-primary");
         $('#writebutton').removeClass("btn-primary");

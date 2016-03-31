@@ -12,7 +12,7 @@ app.get('/yourblogs', function(req, res) {
 });
 
 app.get('/writeblogs', function(req, res) {
-
+  res.json();
 });
 
 app.listen(8080);
