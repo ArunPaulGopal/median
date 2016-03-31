@@ -19,6 +19,8 @@ $(document).ready(function() {
             var title = array[i].blogtitle;
             var content = array[i].blogcontent;
             var imagesrc = array[i].blogimage;
+            var button = document.createElement('button');
+            var buttontext = document.createTextNode('Read More!');
             var media = document.createElement('div');
             var medialeft = document.createElement('div');
             var mediabody = document.createElement('div');
@@ -29,21 +31,25 @@ $(document).ready(function() {
             var image = document.createElement('img');
             image.setAttribute('src',imagesrc);
             $(image).addClass('img-rounded thumbnail');
+            $(button).addClass('btn btn-success center-block');
             $(media).addClass('media');
             $(mediabody).addClass('media-body');
             $(medialeft).addClass('media-left');
             $(panel).addClass('panel panel-success');
-            $(panelhead).addClass('panel panel-heading');
-            $(panelbody).addClass('panel panel-body');
-            $(panelfooter).addClass('panel panel-footer');
+            $(panelhead).addClass('panel-heading');
+            $(panelbody).addClass('panel-body');
+            $(panelfooter).addClass('panel-footer');
             $(medialeft).append(image);
             $(panelhead).append(title);
+            $(button).append(buttontext);
+            $(panelfooter).append(button);
             $(mediabody).append(content);
             $(media).append(medialeft);
             $(media).append(mediabody);
             $(panelbody).append(media);
             $(panel).append(panelhead);
             $(panel).append(panelbody);
+            $(panel).append(panelfooter);
             $('#blogresults').append(panel);
         }
     }
@@ -70,6 +76,8 @@ $(document).ready(function() {
             var title = array[i].blogtitle;
             var content = array[i].blogcontent;
             var imagesrc = array[i].blogimage;
+            var button = document.createElement('button');
+            var buttontext = document.createTextNode('Read More!');
             var media = document.createElement('div');
             var medialeft = document.createElement('div');
             var mediabody = document.createElement('div');
@@ -80,21 +88,25 @@ $(document).ready(function() {
             var image = document.createElement('img');
             image.setAttribute('src',imagesrc);
             $(image).addClass('img-rounded thumbnail');
+            $(button).addClass('btn btn-success center-block');
             $(media).addClass('media');
             $(mediabody).addClass('media-body');
             $(medialeft).addClass('media-left');
             $(panel).addClass('panel panel-success');
-            $(panelhead).addClass('panel panel-heading');
-            $(panelbody).addClass('panel panel-body');
-            $(panelfooter).addClass('panel panel-footer');
+            $(panelhead).addClass('panel-heading');
+            $(panelbody).addClass('panel-body');
+            $(panelfooter).addClass('panel-footer');
             $(medialeft).append(image);
             $(panelhead).append(title);
+            $(button).append(buttontext);
+            $(panelfooter).append(button);
             $(mediabody).append(content);
             $(media).append(medialeft);
             $(media).append(mediabody);
             $(panelbody).append(media);
             $(panel).append(panelhead);
             $(panel).append(panelbody);
+            $(panel).append(panelfooter);
             $('#yourblogresults').append(panel);
         }
     }
