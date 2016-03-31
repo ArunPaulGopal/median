@@ -14,6 +14,8 @@ app.get('/yourblogs', function(req, res) {
 
 app.post('/writeblogs', jsonParser, function(req, res) {
   console.log(req.body);
+  myBlogs.push(req.body);
+  console.log(myBlogs);
   res.json();
 });
 

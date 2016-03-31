@@ -129,8 +129,10 @@ $(document).ready(function() {
       var content = $('#blogcontent').val();
       var title = $('#blogtitle').val();
       var myData = {
-        content:content,
-        title:title
+        blogtitle:title,
+        blogimage:"blog.jpeg",
+        blogcontent:content,
+        tag:"something"
       };
       console.log(myData);
       var payload = JSON.stringify(myData);
@@ -140,8 +142,7 @@ $(document).ready(function() {
       xhr.setRequestHeader("Content-Type","application/json");
       xhr.send(payload);
       xhr.addEventListener('load',function(){
-          var myData = JSON.parse(xhr.responseText);
-
+          $('#temporaryresults').append("SUCCESS! ADD ANOTHER BLOG OR GO TO YOUR BLOGS TO SEE!");
       })
     });
 });
