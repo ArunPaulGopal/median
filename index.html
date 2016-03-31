@@ -23,15 +23,31 @@
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-              <i class="fa fa-medium fa-3x"></i>
+              <i class="fa fa-medium fa-2x"></i>
           </div>
           <div class="btn-group pull-right" role="group">
-            <button class="btn btn-default navbar-btn" id="write">Write a Blog</button>
+            <button class="btn btn-default navbar-btn" id="writebutton">Write a Blog</button>
             <button class="btn btn-default navbar-btn" id="blogsbutton">Your Blogs</button>
             <button class="btn btn-default navbar-btn" id="timelinebutton">Timeline</button>
           </div>
         </div>
       </nav>
+    </div>
+    <div class="container" id="writeblogs">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form>
+            <div class="form-group">
+              <label for="blogtitle">Write Your Blog Here!</label>
+              <input type="text" class="form-control" id="blogtitle" placeholder="Blog Title">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="blogcontent" rows="15" placeholder="Blog Content"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default" id="writeblog">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
     <div class="container hide" id="yourblogs">
       <div class="row">

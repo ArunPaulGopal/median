@@ -61,7 +61,7 @@ $(document).ready(function() {
         })
         $('#blogsbutton').addClass("btn-primary");
         $('#timelinebutton').removeClass("btn-primary");
-        $('#write').removeClass("btn-primary");
+        $('#writebutton').removeClass("btn-primary");
     });
 
     var myBlogs = function(array){
@@ -111,6 +111,6 @@ $(document).ready(function() {
         })
         $('#timelinebutton').addClass("btn-primary");
         $('#blogsbutton').removeClass("btn-primary");
-        $('#write').removeClass("btn-primary");
+        $('#writebutton').removeClass("btn-primary");
     });
 });
