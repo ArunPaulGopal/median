@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var jsonParser = require('body-parser').json();
 
 app.use(express.static("./"));
 
@@ -11,7 +12,8 @@ app.get('/yourblogs', function(req, res) {
   res.json(myBlogs);
 });
 
-app.get('/writeblogs', function(req, res) {
+app.post('/writeblogs', jsonParser, function(req, res) {
+  console.log(req.body);
   res.json();
 });
 

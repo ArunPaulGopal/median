@@ -120,8 +120,28 @@ $(document).ready(function() {
         $('#timeline').addClass("hide");
         $('#yourblogs').addClass("hide");
         $('#writeblogs').removeClass("hide");
-        $('#timelinebutton').addClass("btn-primary");
+        $('#timelinebutton').removeClass("btn-primary");
         $('#blogsbutton').removeClass("btn-primary");
-        $('#writebutton').removeClass("btn-primary");
+        $('#writebutton').addClass("btn-primary");
+    });
+
+    $('#writeblog').click(function(){
+      var content = $('#blogcontent').val();
+      var title = $('#blogtitle').val();
+      var myData = {
+        content:content,
+        title:title
+      };
+      console.log(myData);
+      var payload = JSON.stringify(myData);
+      console.log(payload);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST','/writeblogs');
+      xhr.setRequestHeader("Content-Type","application/json");
+      xhr.send(payload);
+      xhr.addEventListener('load',function(){
+          var myData = JSON.parse(xhr.responseText);
+
+      })
     });
 });
