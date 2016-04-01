@@ -11,7 +11,7 @@ $(document).ready(function() {
             var myData = JSON.parse(xhr.responseText);
             quoteBuilder(myData);
         })
-        $('#timelinebutton').addClass("btn-primary");
+        $('#timelinebutton').addClass("btn-success");
     });
 
 // Search SECTION
@@ -20,10 +20,10 @@ $(document).ready(function() {
         $('#yourquotes').addClass("hide");
         $('#writequotes').addClass("hide");
         $('#searchquotes').removeClass("hide");
-        $('#timelinebutton').removeClass("btn-primary");
-        $('#quotesbutton').removeClass("btn-primary");
-        $('#writebutton').removeClass("btn-primary");
-        $('#searchbutton').addClass("btn-primary");
+        $('#timelinebutton').removeClass("btn-success");
+        $('#quotesbutton').removeClass("btn-success");
+        $('#writebutton').removeClass("btn-success");
+        $('#searchbutton').addClass("btn-success");
     });
 
     $('#startsearch').click(function(){
@@ -47,7 +47,6 @@ $(document).ready(function() {
           else {
             //APPEND FAILURE MESSAGE
           }
-
       })
     });
 
@@ -64,23 +63,27 @@ $(document).ready(function() {
             var panelbody = document.createElement('div');
             var panelfooter = document.createElement('div');
             var image = document.createElement('img');
+            var icon = document.createElement('i');
             image.setAttribute('src',imagesrc);
+            $(icon).addClass('fa fa-heart-o fa-2x');
             $(image).addClass('img-rounded thumbnail');
             $(media).addClass('media');
             $(mediabody).addClass('media-body');
             $(medialeft).addClass('media-left');
             $(panel).addClass('panel panel-success');
-            $(panelhead).addClass('panel-heading');
+            $(panelhead).addClass('panel-heading text-center');
             $(panelbody).addClass('panel-body');
-            $(panelfooter).addClass('panel-footer');
+            $(panelfooter).addClass('panel-footer text-center');
             $(medialeft).append(image);
             $(panelhead).append(title);
             $(mediabody).append(content);
             $(media).append(medialeft);
             $(media).append(mediabody);
             $(panelbody).append(media);
+            $(panelfooter).append(icon);
             $(panel).append(panelhead);
             $(panel).append(panelbody);
+            $(panel).append(panelfooter);
             $('#searchresults').append(panel);
         }
     }
@@ -98,10 +101,10 @@ $(document).ready(function() {
             var myData = JSON.parse(xhr.responseText);
             myquotes(myData);
         })
-        $('#quotesbutton').addClass("btn-primary");
-        $('#timelinebutton').removeClass("btn-primary");
-        $('#writebutton').removeClass("btn-primary");
-        $('#searchbutton').removeClass("btn-primary");
+        $('#quotesbutton').addClass("btn-success");
+        $('#timelinebutton').removeClass("btn-success");
+        $('#writebutton').removeClass("btn-success");
+        $('#searchbutton').removeClass("btn-success");
     });
 
     var myquotes = function(array){
@@ -123,7 +126,7 @@ $(document).ready(function() {
             $(mediabody).addClass('media-body');
             $(medialeft).addClass('media-left');
             $(panel).addClass('panel panel-success');
-            $(panelhead).addClass('panel-heading');
+            $(panelhead).addClass('panel-heading text-center');
             $(panelbody).addClass('panel-body');
             $(panelfooter).addClass('panel-footer');
             $(medialeft).append(image);
@@ -151,10 +154,10 @@ $(document).ready(function() {
             var myData = JSON.parse(xhr.responseText);
             quoteBuilder(myData);
         })
-        $('#timelinebutton').addClass("btn-primary");
-        $('#quotesbutton').removeClass("btn-primary");
-        $('#writebutton').removeClass("btn-primary");
-        $('#searchbutton').removeClass("btn-primary");
+        $('#timelinebutton').addClass("btn-success");
+        $('#quotesbutton').removeClass("btn-success");
+        $('#writebutton').removeClass("btn-success");
+        $('#searchbutton').removeClass("btn-success");
     });
 
     var quoteBuilder = function(array){
@@ -169,37 +172,41 @@ $(document).ready(function() {
             var panelhead = document.createElement('div');
             var panelbody = document.createElement('div');
             var panelfooter = document.createElement('div');
+            var icon = document.createElement('i');
             var image = document.createElement('img');
             image.setAttribute('src',imagesrc);
             $(image).addClass('img-rounded thumbnail');
+            $(icon).addClass('fa fa-heart-o fa-2x');
             $(media).addClass('media');
             $(mediabody).addClass('media-body');
             $(medialeft).addClass('media-left');
             $(panel).addClass('panel panel-success');
-            $(panelhead).addClass('panel-heading');
+            $(panelhead).addClass('panel-heading text-center');
             $(panelbody).addClass('panel-body');
-            $(panelfooter).addClass('panel-footer');
+            $(panelfooter).addClass('panel-footer text-center');
             $(medialeft).append(image);
             $(panelhead).append(title);
             $(mediabody).append(content);
             $(media).append(medialeft);
             $(media).append(mediabody);
             $(panelbody).append(media);
+            $(panelfooter).append(icon);
             $(panel).append(panelhead);
             $(panel).append(panelbody);
+            $(panel).append(panelfooter);
             $('#quoteresults').append(panel);
         }
     }
-//WRITE QUOTE SECTION    
+//WRITE QUOTE SECTION
     $('#writebutton').click(function(){
         $('#timeline').addClass("hide");
         $('#yourquotes').addClass("hide");
         $('#writequotes').removeClass("hide");
         $('#searchquotes').addClass("hide");
-        $('#timelinebutton').removeClass("btn-primary");
-        $('#quotesbutton').removeClass("btn-primary");
-        $('#writebutton').addClass("btn-primary");
-        $('#searchbutton').removeClass("btn-primary");
+        $('#timelinebutton').removeClass("btn-success");
+        $('#quotesbutton').removeClass("btn-success");
+        $('#writebutton').addClass("btn-success");
+        $('#searchbutton').removeClass("btn-success");
     });
 
     $('#writequote').click(function(){

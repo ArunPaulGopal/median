@@ -20,7 +20,7 @@ app.post('/writequotes', jsonParser, function(req, res) {
 app.post('/searchquotes', jsonParser, function(req, res) {
   var results =[];
   var search = req.body.search.toLowerCase();
-  searchQuery(allquotes,search,results)
+  searchQuery(allquotes,search,results);
   res.json(results);
 });
 
@@ -28,12 +28,12 @@ app.listen(8080);
 
 var searchQuery = function (object,toSearch,myArray) {
   for (var i=0; i<object.length; i++) {
-      var content = object[i].quotecontent
+      var content = object[i].quotecontent;
       var goodcontent = content.toLowerCase();
       if(goodcontent.indexOf(toSearch) != -1) {
         myArray.push(object[i]);
       }
-  }
+  };
 };
 
 var allquotes = [
