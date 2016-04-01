@@ -52,6 +52,7 @@ $(document).ready(function() {
 
     var searchBuilder = function(array){
         for (i=0; i<array.length; i++){
+          if(array[i].fav == false){
             var title = array[i].quotetitle;
             var content = array[i].quotecontent;
             var imagesrc = array[i].quoteimage;
@@ -85,6 +86,42 @@ $(document).ready(function() {
             $(panel).append(panelbody);
             $(panel).append(panelfooter);
             $('#searchresults').append(panel);
+          }
+          else {
+            var title = array[i].quotetitle;
+            var content = array[i].quotecontent;
+            var imagesrc = array[i].quoteimage;
+            var media = document.createElement('div');
+            var medialeft = document.createElement('div');
+            var mediabody = document.createElement('div');
+            var panel = document.createElement('div');
+            var panelhead = document.createElement('div');
+            var panelbody = document.createElement('div');
+            var panelfooter = document.createElement('div');
+            var image = document.createElement('img');
+            var icon = document.createElement('i');
+            image.setAttribute('src',imagesrc);
+            $(icon).addClass('fa fa-heart fa-2x');
+            $(image).addClass('img-rounded thumbnail');
+            $(media).addClass('media');
+            $(mediabody).addClass('media-body');
+            $(medialeft).addClass('media-left');
+            $(panel).addClass('panel panel-success');
+            $(panelhead).addClass('panel-heading text-center');
+            $(panelbody).addClass('panel-body');
+            $(panelfooter).addClass('panel-footer text-center');
+            $(medialeft).append(image);
+            $(panelhead).append(title);
+            $(mediabody).append(content);
+            $(media).append(medialeft);
+            $(media).append(mediabody);
+            $(panelbody).append(media);
+            $(panelfooter).append(icon);
+            $(panel).append(panelhead);
+            $(panel).append(panelbody);
+            $(panel).append(panelfooter);
+            $('#searchresults').append(panel);
+          }
         }
     }
 //MY QUOTES SECTION
@@ -162,6 +199,7 @@ $(document).ready(function() {
 
     var quoteBuilder = function(array){
         for (i=0; i<array.length; i++){
+          if(array[i].fav == false){
             var title = array[i].quotetitle;
             var content = array[i].quotecontent;
             var imagesrc = array[i].quoteimage;
@@ -195,6 +233,42 @@ $(document).ready(function() {
             $(panel).append(panelbody);
             $(panel).append(panelfooter);
             $('#quoteresults').append(panel);
+          }
+          else {
+            var title = array[i].quotetitle;
+            var content = array[i].quotecontent;
+            var imagesrc = array[i].quoteimage;
+            var media = document.createElement('div');
+            var medialeft = document.createElement('div');
+            var mediabody = document.createElement('div');
+            var panel = document.createElement('div');
+            var panelhead = document.createElement('div');
+            var panelbody = document.createElement('div');
+            var panelfooter = document.createElement('div');
+            var icon = document.createElement('i');
+            var image = document.createElement('img');
+            image.setAttribute('src',imagesrc);
+            $(image).addClass('img-rounded thumbnail');
+            $(icon).addClass('fa fa-heart fa-2x');
+            $(media).addClass('media');
+            $(mediabody).addClass('media-body');
+            $(medialeft).addClass('media-left');
+            $(panel).addClass('panel panel-success');
+            $(panelhead).addClass('panel-heading text-center');
+            $(panelbody).addClass('panel-body');
+            $(panelfooter).addClass('panel-footer text-center');
+            $(medialeft).append(image);
+            $(panelhead).append(title);
+            $(mediabody).append(content);
+            $(media).append(medialeft);
+            $(media).append(mediabody);
+            $(panelbody).append(media);
+            $(panelfooter).append(icon);
+            $(panel).append(panelhead);
+            $(panel).append(panelbody);
+            $(panel).append(panelfooter);
+            $('#quoteresults').append(panel);
+          }
         }
     }
 //WRITE QUOTE SECTION
