@@ -21,12 +21,10 @@ app.post('/searchquotes', jsonParser, function(req, res) {
   var results =[];
   var search = req.body.search.toLowerCase();
   searchQuery(allquotes,search,results)
-  console.log(results);
-  res.json();
+  res.json(results);
 });
 
 app.listen(8080);
-
 
 var searchQuery = function (object,toSearch,myArray) {
   for (var i=0; i<object.length; i++) {

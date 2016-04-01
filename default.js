@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+//LOAD UP TIMELINE UPON ENTRY OF WEBSITE
     $('#enter').click(function(){
         $('#timeline').toggleClass("hide");
         $('#welcome').toggleClass("hide");
@@ -14,7 +14,44 @@ $(document).ready(function() {
         $('#timelinebutton').addClass("btn-primary");
     });
 
-    var quoteBuilder = function(array){
+// Search SECTION
+    $('#searchbutton').click(function(){
+        $('#timeline').addClass("hide");
+        $('#yourquotes').addClass("hide");
+        $('#writequotes').addClass("hide");
+        $('#searchquotes').removeClass("hide");
+        $('#timelinebutton').removeClass("btn-primary");
+        $('#quotesbutton').removeClass("btn-primary");
+        $('#writebutton').removeClass("btn-primary");
+        $('#searchbutton').addClass("btn-primary");
+    });
+
+    $('#startsearch').click(function(){
+      var content = $('#searchstring').val();
+      var mySearch = {
+        search:content
+      };
+      console.log(mySearch);
+      var payload = JSON.stringify(mySearch);
+      console.log(payload);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST','/searchquotes');
+      xhr.setRequestHeader("Content-Type","application/json");
+      xhr.send(payload);
+      xhr.addEventListener('load',function(){
+          var myData = JSON.parse(xhr.responseText);
+          $('#searchresults').empty();
+          if (myData.length > 0) {
+            searchBuilder(myData)
+          }
+          else {
+            //APPEND FAILURE MESSAGE
+          }
+
+      })
+    });
+
+    var searchBuilder = function(array){
         for (i=0; i<array.length; i++){
             var title = array[i].quotetitle;
             var content = array[i].quotecontent;
@@ -44,38 +81,10 @@ $(document).ready(function() {
             $(panelbody).append(media);
             $(panel).append(panelhead);
             $(panel).append(panelbody);
-            $('#quoteresults').append(panel);
+            $('#searchresults').append(panel);
         }
     }
-
-    $('#searchbutton').click(function(){
-        $('#timeline').addClass("hide");
-        $('#yourquotes').addClass("hide");
-        $('#writequotes').addClass("hide");
-        $('#searchquotes').removeClass("hide");
-        $('#timelinebutton').removeClass("btn-primary");
-        $('#quotesbutton').removeClass("btn-primary");
-        $('#writebutton').removeClass("btn-primary");
-        $('#searchbutton').addClass("btn-primary");
-    });
-
-    $('#startsearch').click(function(){
-      var content = $('#searchstring').val();
-      var mySearch = {
-        search:content
-      };
-      console.log(mySearch);
-      var payload = JSON.stringify(mySearch);
-      console.log(payload);
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST','/searchquotes');
-      xhr.setRequestHeader("Content-Type","application/json");
-      xhr.send(payload);
-      xhr.addEventListener('load',function(){
-          console.log("Stuff sent back here");
-      })
-    });
-
+//MY QUOTES SECTION
     $('#quotesbutton').click(function(){
         $('#timeline').addClass("hide");
         $('#writequotes').addClass("hide");
@@ -128,7 +137,7 @@ $(document).ready(function() {
             $('#yourquoteresults').append(panel);
         }
     }
-
+//TIMELINE SECTION
     $('#timelinebutton').click(function(){
         $('#timeline').removeClass("hide");
         $('#yourquotes').addClass("hide");
@@ -148,6 +157,40 @@ $(document).ready(function() {
         $('#searchbutton').removeClass("btn-primary");
     });
 
+    var quoteBuilder = function(array){
+        for (i=0; i<array.length; i++){
+            var title = array[i].quotetitle;
+            var content = array[i].quotecontent;
+            var imagesrc = array[i].quoteimage;
+            var media = document.createElement('div');
+            var medialeft = document.createElement('div');
+            var mediabody = document.createElement('div');
+            var panel = document.createElement('div');
+            var panelhead = document.createElement('div');
+            var panelbody = document.createElement('div');
+            var panelfooter = document.createElement('div');
+            var image = document.createElement('img');
+            image.setAttribute('src',imagesrc);
+            $(image).addClass('img-rounded thumbnail');
+            $(media).addClass('media');
+            $(mediabody).addClass('media-body');
+            $(medialeft).addClass('media-left');
+            $(panel).addClass('panel panel-success');
+            $(panelhead).addClass('panel-heading');
+            $(panelbody).addClass('panel-body');
+            $(panelfooter).addClass('panel-footer');
+            $(medialeft).append(image);
+            $(panelhead).append(title);
+            $(mediabody).append(content);
+            $(media).append(medialeft);
+            $(media).append(mediabody);
+            $(panelbody).append(media);
+            $(panel).append(panelhead);
+            $(panel).append(panelbody);
+            $('#quoteresults').append(panel);
+        }
+    }
+//WRITE QUOTE SECTION    
     $('#writebutton').click(function(){
         $('#timeline').addClass("hide");
         $('#yourquotes').addClass("hide");
