@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Median: A Blog Site">
+    <meta name="description" content="Median: A quote Site">
     <meta name="author" content="Arun Gopal">
     <title>Median</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-md=12">
           WELCOME PAGE THAT WILL EVENTUALLY BE A LOGIN PAGE!!!!
-          <button id="enter">Click Here to See the Blog</button>
+          <button id="enter">Click Here to See the quote</button>
         </div>
       </div>
     </div>
@@ -26,38 +26,41 @@
               <i class="fa fa-medium fa-3x"></i>
           </div>
           <div class="btn-group pull-right" role="group">
-            <button class="btn btn-default navbar-btn" id="writebutton">Write a Blog</button>
-            <button class="btn btn-default navbar-btn" id="blogsbutton">Your Blogs</button>
+            <button class="btn btn-default navbar-btn" id="searchbutton">Search for a quote</button>
+            <button class="btn btn-default navbar-btn" id="writebutton">Write a quote</button>
+            <button class="btn btn-default navbar-btn" id="quotesbutton">Your quotes</button>
             <button class="btn btn-default navbar-btn" id="timelinebutton">Timeline</button>
           </div>
         </div>
       </nav>
     </div>
-    <div class="container hide" id="writeblogs">
+    <div class="container hide" id="searchquotes">
+    </div>
+    <div class="container hide" id="writequotes">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <form>
             <div class="form-group">
-              <label for="blogtitle">Write Your Blog Here!</label>
-              <input type="text" class="form-control" id="blogtitle" placeholder="Blog Title">
+              <label for="quotetitle">Write Your quote Here!</label>
+              <input type="text" class="form-control" id="quotetitle" placeholder="quote Title">
             </div>
             <div class="form-group">
-              <textarea class="form-control" id="blogcontent" rows="15" placeholder="Blog Content"></textarea>
+              <textarea class="form-control" id="quotecontent" rows="15" placeholder="quote Content"></textarea>
             </div>
           </form>
-          <button class="btn btn-default" id="writeblog">Submit</button>
+          <button class="btn btn-default" id="writequote">Submit</button>
           <div class="panel panel-primary" id="temporaryresults"></div>
         </div>
       </div>
     </div>
-    <div class="container hide" id="yourblogs">
+    <div class="container hide" id="yourquotes">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <div class="panel panel-primary">
-            <strong><h3 class="text-center">Your Blog Posts</h3></strong>
+            <strong><h3 class="text-center">Your quote Posts</h3></strong>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-12" id="yourblogresults">
+                <div class="col-md-12" id="yourquoteresults">
                 </div>
               </div>
             </div>
@@ -69,10 +72,10 @@
         <div class="row">
             <div class="col-md-9">
               <div class="panel panel-primary">
-                <strong><h3 class="text-center">Blog Posts</h3></strong>
+                <strong><h3 class="text-center">quote Posts</h3></strong>
                 <div class="panel-body">
                   <div class="row">
-                    <div class="col-md-12" id="blogresults">
+                    <div class="col-md-12" id="quoteresults">
                     </div>
                   </div>
                 </div>
@@ -80,7 +83,7 @@
             </div>
             <div class="col-md-3" id="tagsection">
                 <div class="well">
-                    <h4>Blog Search</h4>
+                    <h4>quote Search</h4>
                     <div class="input-group">
                         <input type="text" class="form-control">
                         <span class="input-group-btn">

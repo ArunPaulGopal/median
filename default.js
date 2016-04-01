@@ -5,20 +5,20 @@ $(document).ready(function() {
         $('#welcome').toggleClass("hide");
         $('#navbar').toggleClass("hide");
         var xhr = new XMLHttpRequest();
-        xhr.open('GET','/blogs');
+        xhr.open('GET','/quotes');
         xhr.send(null);
         xhr.addEventListener('load',function(){
             var myData = JSON.parse(xhr.responseText);
-            blogBuilder(myData);
+            quoteBuilder(myData);
         })
         $('#timelinebutton').addClass("btn-primary");
     });
 
-    var blogBuilder = function(array){
+    var quoteBuilder = function(array){
         for (i=0; i<array.length; i++){
-            var title = array[i].blogtitle;
-            var content = array[i].blogcontent;
-            var imagesrc = array[i].blogimage;
+            var title = array[i].quotetitle;
+            var content = array[i].quotecontent;
+            var imagesrc = array[i].quoteimage;
             var button = document.createElement('button');
             var buttontext = document.createTextNode('Read More!');
             var media = document.createElement('div');
@@ -50,32 +50,32 @@ $(document).ready(function() {
             $(panel).append(panelhead);
             $(panel).append(panelbody);
             $(panel).append(panelfooter);
-            $('#blogresults').append(panel);
+            $('#quoteresults').append(panel);
         }
     }
 
-    $('#blogsbutton').click(function(){
+    $('#quotesbutton').click(function(){
         $('#timeline').addClass("hide");
-        $('#writeblogs').addClass("hide");
-        $('#yourblogs').removeClass("hide");
-        $('#yourblogresults').empty();
+        $('#writequotes').addClass("hide");
+        $('#yourquotes').removeClass("hide");
+        $('#yourquoteresults').empty();
         var xhr = new XMLHttpRequest();
-        xhr.open('GET','/yourblogs');
+        xhr.open('GET','/yourquotes');
         xhr.send(null);
         xhr.addEventListener('load',function(){
             var myData = JSON.parse(xhr.responseText);
-            myBlogs(myData);
+            myquotes(myData);
         })
-        $('#blogsbutton').addClass("btn-primary");
+        $('#quotesbutton').addClass("btn-primary");
         $('#timelinebutton').removeClass("btn-primary");
         $('#writebutton').removeClass("btn-primary");
     });
 
-    var myBlogs = function(array){
+    var myquotes = function(array){
         for (i=0; i<array.length; i++){
-            var title = array[i].blogtitle;
-            var content = array[i].blogcontent;
-            var imagesrc = array[i].blogimage;
+            var title = array[i].quotetitle;
+            var content = array[i].quotecontent;
+            var imagesrc = array[i].quoteimage;
             var button = document.createElement('button');
             var buttontext = document.createTextNode('Read More!');
             var media = document.createElement('div');
@@ -107,54 +107,54 @@ $(document).ready(function() {
             $(panel).append(panelhead);
             $(panel).append(panelbody);
             $(panel).append(panelfooter);
-            $('#yourblogresults').append(panel);
+            $('#yourquoteresults').append(panel);
         }
     }
 
     $('#timelinebutton').click(function(){
         $('#timeline').removeClass("hide");
-        $('#yourblogs').addClass("hide");
-        $('#writeblogs').addClass("hide");
-        $('#blogresults').empty();
+        $('#yourquotes').addClass("hide");
+        $('#writequotes').addClass("hide");
+        $('#quoteresults').empty();
         var xhr = new XMLHttpRequest();
-        xhr.open('GET','/blogs');
+        xhr.open('GET','/quotes');
         xhr.send(null);
         xhr.addEventListener('load',function(){
             var myData = JSON.parse(xhr.responseText);
-            blogBuilder(myData);
+            quoteBuilder(myData);
         })
         $('#timelinebutton').addClass("btn-primary");
-        $('#blogsbutton').removeClass("btn-primary");
+        $('#quotesbutton').removeClass("btn-primary");
         $('#writebutton').removeClass("btn-primary");
     });
 
     $('#writebutton').click(function(){
         $('#timeline').addClass("hide");
-        $('#yourblogs').addClass("hide");
-        $('#writeblogs').removeClass("hide");
+        $('#yourquotes').addClass("hide");
+        $('#writequotes').removeClass("hide");
         $('#timelinebutton').removeClass("btn-primary");
-        $('#blogsbutton').removeClass("btn-primary");
+        $('#quotesbutton').removeClass("btn-primary");
         $('#writebutton').addClass("btn-primary");
     });
 
-    $('#writeblog').click(function(){
-      var content = $('#blogcontent').val();
-      var title = $('#blogtitle').val();
+    $('#writequote').click(function(){
+      var content = $('#quotecontent').val();
+      var title = $('#quotetitle').val();
       var myData = {
-        blogtitle:title,
-        blogimage:"blog.jpeg",
-        blogcontent:content,
+        quotetitle:title,
+        quoteimage:"quote.jpeg",
+        quotecontent:content,
         tag:"something"
       };
       console.log(myData);
       var payload = JSON.stringify(myData);
       console.log(payload);
       var xhr = new XMLHttpRequest();
-      xhr.open('POST','/writeblogs');
+      xhr.open('POST','/writequotes');
       xhr.setRequestHeader("Content-Type","application/json");
       xhr.send(payload);
       xhr.addEventListener('load',function(){
-          $('#temporaryresults').append("SUCCESS! ADD ANOTHER BLOG OR GO TO YOUR BLOGS TO SEE!");
+          $('#temporaryresults').append("SUCCESS! ADD ANOTHER quote OR GO TO YOUR quoteS TO SEE!");
       })
     });
 });
