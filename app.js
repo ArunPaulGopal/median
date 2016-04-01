@@ -17,23 +17,38 @@ app.post('/writequotes', jsonParser, function(req, res) {
   res.json();
 });
 
-app.post('/searchquotes', function(req, res) {
+app.post('/searchquotes', jsonParser, function(req, res) {
+  var results =[];
+  var search = req.body.search.toLowerCase();
+  searchQuery(allquotes,search,results)
+  console.log(results);
   res.json();
 });
 
 app.listen(8080);
 
+
+var searchQuery = function (object,toSearch,myArray) {
+  for (var i=0; i<object.length; i++) {
+      var content = object[i].quotecontent
+      var goodcontent = content.toLowerCase();
+      if(goodcontent.indexOf(toSearch) != -1) {
+        myArray.push(object[i]);
+      }
+  }
+};
+
 var allquotes = [
             {
-                quotetitle: "quote TITLE",
+                quotetitle: "quote TITLE should return",
                 quoteimage: "quote.jpeg",
-                quotecontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                quotecontent: "Lorem test ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 tag:"ISIS"
             },
             {
-                quotetitle: "quote TITLE",
+                quotetitle: "test",
                 quoteimage: "quote.jpeg",
-                quotecontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                quotecontent: "Lorem ipsum TEST dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 tag:"MOVIES"
             },
             {

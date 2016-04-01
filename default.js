@@ -68,7 +68,7 @@ $(document).ready(function() {
       var payload = JSON.stringify(mySearch);
       console.log(payload);
       var xhr = new XMLHttpRequest();
-      xhr.open('POST','/writequotes');
+      xhr.open('POST','/searchquotes');
       xhr.setRequestHeader("Content-Type","application/json");
       xhr.send(payload);
       xhr.addEventListener('load',function(){
