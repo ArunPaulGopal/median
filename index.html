@@ -23,25 +23,52 @@
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-              <i class="fa fa-medium fa-3x"></i>
+              <i class="fa fa-quote-left fa-2x"></i>
+              <i class="fa fa-question-circle fa-2x"></i>
+              <i class="fa fa-quote-right fa-2x"></i>
           </div>
           <div class="btn-group pull-right" role="group">
-            <button class="btn btn-default navbar-btn" id="searchbutton">Search for a quote</button>
-            <button class="btn btn-default navbar-btn" id="writebutton">Write a quote</button>
-            <button class="btn btn-default navbar-btn" id="quotesbutton">Your quotes</button>
-            <button class="btn btn-default navbar-btn" id="timelinebutton">Timeline</button>
+            <button class="btn btn-default navbar-btn" id="searchbutton">Search Q</button>
+            <button class="btn btn-default navbar-btn" id="writebutton">Write Q</button>
+            <button class="btn btn-default navbar-btn" id="quotesbutton">My Q</button>
+            <button class="btn btn-default navbar-btn" id="timelinebutton">World Q</button>
           </div>
         </div>
       </nav>
     </div>
     <div class="container hide" id="searchquotes">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="jumbotron">
+              <h4>Quote Search</h4>
+              <div class="input-group">
+                  <input type="text" class="form-control" id="searchstring">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" id="startsearch" type="button">
+                          <span class="glyphicon glyphicon-search"></span>
+                  </button>
+                  </span>
+              </div>
+          </div>
+          <div class="panel panel-primary">
+            <strong><h3 class="text-center">Search Results</h3></strong>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12" id="searchresults">
+                  SEARCH FOR SOMETHING ALREADY!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="container hide" id="writequotes">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <form>
             <div class="form-group">
-              <label for="quotetitle">Write Your quote Here!</label>
+              <label for="quotetitle">Write Your Quote Here!</label>
               <input type="text" class="form-control" id="quotetitle" placeholder="quote Title">
             </div>
             <div class="form-group">
@@ -57,7 +84,7 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <div class="panel panel-primary">
-            <strong><h3 class="text-center">Your quote Posts</h3></strong>
+            <strong><h3 class="text-center">Your Quote Posts</h3></strong>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-12" id="yourquoteresults">
@@ -72,7 +99,7 @@
         <div class="row">
             <div class="col-md-9">
               <div class="panel panel-primary">
-                <strong><h3 class="text-center">quote Posts</h3></strong>
+                <strong><h3 class="text-center">Quote Posts</h3></strong>
                 <div class="panel-body">
                   <div class="row">
                     <div class="col-md-12" id="quoteresults">
@@ -82,17 +109,6 @@
               </div>
             </div>
             <div class="col-md-3" id="tagsection">
-                <div class="well">
-                    <h4>quote Search</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
-                </div>
                 <div class="well">
                     <h4>Tags Available</h4>
                     <div class="row">

@@ -17,6 +17,10 @@ app.post('/writequotes', jsonParser, function(req, res) {
   res.json();
 });
 
+app.post('/searchquotes', function(req, res) {
+  res.json();
+});
+
 app.listen(8080);
 
 var allquotes = [
