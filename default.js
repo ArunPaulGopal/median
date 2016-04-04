@@ -142,7 +142,7 @@ $(document).ready(function() {
 
     var myquotes = function(array){
         for (i=0; i<array.length; i++){
-            var title = array[i].quotetime;
+            var title = array[i].quotetitle;
             var content = array[i].quotecontent;
             var imagesrc = array[i].quoteimage;
             var media = document.createElement('div');
@@ -153,6 +153,7 @@ $(document).ready(function() {
             var panelbody = document.createElement('div');
             var panelfooter = document.createElement('div');
             var image = document.createElement('img');
+            var time = array[i].quotetime
             image.setAttribute('src',imagesrc);
             $(image).addClass('img-rounded thumbnail');
             $(media).addClass('media');
@@ -161,7 +162,7 @@ $(document).ready(function() {
             $(panel).addClass('panel panel-success');
             $(panelhead).addClass('panel-heading text-center');
             $(panelbody).addClass('panel-body');
-            $(panelfooter).addClass('panel-footer');
+            $(panelfooter).addClass('panel-footer text-center');
             $(medialeft).append(image);
             $(panelhead).append(title);
             $(mediabody).append(content);
@@ -170,6 +171,8 @@ $(document).ready(function() {
             $(panelbody).append(media);
             $(panel).append(panelhead);
             $(panel).append(panelbody);
+            $(panelfooter).append(time);
+            $(panel).append(panelfooter);
             $('#yourquoteresults').append(panel);
         }
     }
@@ -330,6 +333,8 @@ $(document).ready(function() {
         $('#favoritebutton').removeClass("btn-success");
         $('#writebutton').addClass("btn-success");
         $('#searchbutton').removeClass("btn-success");
+        $('#quotetitle').val('');
+        $('#quotecontent').val('');
     });
 
     $('#writequote').click(function(){

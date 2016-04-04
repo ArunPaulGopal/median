@@ -67,9 +67,9 @@ var favToggle = function (object,idtarget) {
       if(objectfav == false){
         object[i].fav = true;
       }
-    }
-  }
-}
+    };
+  };
+};
 
 var allquotes = [
             {
@@ -204,14 +204,14 @@ var allquotes = [
 
 var myquotes = [
   {
-      quotetitle: "MY quote TITLE",
+      quotetitle: "Age and Learning",
       quoteimage: "quote.jpeg",
-      quotecontent: "Sum your friends, family, possessions. Can you still be a happy human being if you were to lose it all?",
+      quotecontent: "Some people die at 25 but aren't buried until 75.",
       tag:"ISIS",
       quotetime: "1/1/2016"
   },
   {
-      quotetitle: "MY quote TITLE",
+      quotetitle: "Occam",
       quoteimage: "quote.jpeg",
       quotecontent: "It is vain to do with more what can be done with less.",
       tag:"MOVIES",
