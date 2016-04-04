@@ -230,6 +230,78 @@ var allquotes = [
                 quoteid:16,
                 fav:false,
                 tags: ["tagA","tagC"]
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "You’ll never be as lazy as whoever named the fireplace.",
+                quoteauthor: "Troll",
+                quoteid:17,
+                fav:false,
+                tags: ["tagA","tagG"]
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "Hate to break it to you Facebook, but the entire internet is a dislike button",
+                quoteauthor: "Josh Groban",
+                quoteid:18,
+                fav:false,
+                tags: ["tagA","tagG"]
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "Don’t walk in front of me… I may not follow Don’t walk behind me… I may not lead Walk beside me… just be my friend",
+                quoteauthor: "Albert Camus",
+                quoteid:19,
+                fav:false,
+                tags: ["tagA","tagH"]
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "Good friends, good books, and a sleepy conscience: this is the ideal life.",
+                quoteauthor: "Mark Twain",
+                quoteid:20,
+                fav:false,
+                tags: ["tagA","tagH"]
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for.",
+                quoteauthor: "Bob Marley",
+                quoteid:21,
+                fav:false,
+                tags: ["tagA","tagH"]
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "Reader, suppose you were an idiot. And suppose you were a member of Congress. But I repeat myself.",
+                quoteauthor: "Mark Twain",
+                quoteid:22,
+                fav:false,
+                tags: ["tagA","tagD"]
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "There comes a time when one must take a position that is neither safe, nor politic, nor popular, but he must take it because conscience tells him it is right.",
+                quoteauthor: "Martin Luther King Jr.",
+                quoteid:23,
+                fav:false,
+                tags: ["tagA","tagD"]
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "You're not to be so blind with patriotism that you can't face reality. Wrong is wrong, no matter who does it or says it.",
+                quoteauthor: "Malcolm X",
+                quoteid:24,
+                fav:false,
+                tags: ["tagA","tagD"]
             }
 ];
 
