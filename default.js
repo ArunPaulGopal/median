@@ -47,7 +47,7 @@ $(document).ready(function() {
           }
           else {
             $('#searchresults').append("<h1 class='text-center text-danger'>Please use a better search term to find videos!(Hint: Common words like 'the' will work!)</h1>");
-            $('#searchresults').append("<img src='404.jpg' class='center-block'>");
+            $('#searchresults').append("<img src='images/404.jpg' class='center-block'>");
           }
       })
     });
