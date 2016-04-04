@@ -13,7 +13,6 @@ $(document).ready(function() {
         })
         $('#timelinebutton').addClass("btn-success");
     });
-
 // Search SECTION
     $('#searchbutton').click(function(){
         $('#timeline').addClass("hide");
@@ -64,6 +63,7 @@ $(document).ready(function() {
           var panelfooter = document.createElement('div');
           var image = document.createElement('img');
           var icon = document.createElement('i');
+          icon.setAttribute('id',array[i].quoteid);
           $(image).addClass('img-rounded thumbnail');
           image.setAttribute('src',imagesrc);
           $(media).addClass('media');
@@ -82,18 +82,21 @@ $(document).ready(function() {
           $(panel).append(panelhead);
           $(panel).append(panelbody);
           if(array[i].fav == false){
-            $(icon).addClass('fa fa-heart-o fa-2x');
+            $(icon).addClass('fa fa-heart-o fa-2x favorite');
             $(panelfooter).append(icon);
             $(panel).append(panelfooter);
             $('#searchresults').append(panel);
           }
           else {
-            $(icon).addClass('fa fa-heart fa-2x');
+            $(icon).addClass('fa fa-heart fa-2x favorite');
             $(panelfooter).append(icon);
             $(panel).append(panelfooter);
             $('#searchresults').append(panel);
           }
         }
+        $('.fa').click(function(){
+          console.log("hi");
+      });
     }
 //MY QUOTES SECTION
     $('#quotesbutton').click(function(){
@@ -182,8 +185,11 @@ $(document).ready(function() {
           var panelfooter = document.createElement('div');
           var image = document.createElement('img');
           var icon = document.createElement('i');
+          var attribute = document.createElement('a');
+          icon.setAttribute('id',array[i].quoteid);
           $(image).addClass('img-rounded thumbnail');
           image.setAttribute('src',imagesrc);
+          $(attribute).addClass('favorite');
           $(media).addClass('media');
           $(mediabody).addClass('media-body');
           $(medialeft).addClass('media-left');
@@ -201,17 +207,22 @@ $(document).ready(function() {
           $(panel).append(panelbody);
           if(array[i].fav == false){
             $(icon).addClass('fa fa-heart-o fa-2x');
-            $(panelfooter).append(icon);
+            $(attribute).append(icon);
+            $(panelfooter).append(attribute);
             $(panel).append(panelfooter);
             $('#quoteresults').append(panel);
           }
           else {
             $(icon).addClass('fa fa-heart fa-2x');
-            $(panelfooter).append(icon);
+            $(attribute).append(icon);
+            $(panelfooter).append(attribute);
             $(panel).append(panelfooter);
             $('#quoteresults').append(panel);
           }
         }
+        $('.fa').click(function(){
+          console.log("hi");
+      });
     }
 //WRITE QUOTE SECTION
     $('#writebutton').click(function(){
