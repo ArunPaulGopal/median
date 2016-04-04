@@ -336,8 +336,11 @@ $(document).ready(function() {
       var content = $('#quotecontent').val();
       var title = $('#quotetitle').val();
       var date = new Date();
+      var currentDate = date.getDate();
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
       var myData = {
-        quotetime: date,
+        quotetime: currentDate + "/" + month + "/" + year,
         quotetitle:title,
         quoteimage:"quote.jpeg",
         quotecontent:content,
