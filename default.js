@@ -20,11 +20,8 @@ $(document).ready(function() {
         $('#writequotes').addClass("hide");
         $('#favoritequotes').addClass("hide");
         $('#searchquotes').removeClass("hide");
-        $('#timelinebutton').removeClass("btn-success");
-        $('#quotesbutton').removeClass("btn-success");
-        $('#favoritebutton').removeClass("btn-success");
-        $('#writebutton').removeClass("btn-success");
-        $('#searchbutton').addClass("btn-success");
+        $('.navbar-btn').removeClass("btn-success");
+        $(this).addClass("btn-success");
         $('#searchresults').empty();
         $('#searchstring').val('');
     });
@@ -134,11 +131,8 @@ $(document).ready(function() {
             var myData = JSON.parse(xhr.responseText);
             myquotes(myData);
         })
-        $('#quotesbutton').addClass("btn-success");
-        $('#timelinebutton').removeClass("btn-success");
-        $('#writebutton').removeClass("btn-success");
-        $('#searchbutton').removeClass("btn-success");
-        $('#favoritebutton').removeClass("btn-success");
+        $('.navbar-btn').removeClass("btn-success");
+        $(this).addClass("btn-success");
     });
 
     var myquotes = function(array){
@@ -192,11 +186,8 @@ $(document).ready(function() {
                 var myData = JSON.parse(xhr.responseText);
                 favQuotes(myData);
             })
-            $('#quotesbutton').removeClass("btn-success");
-            $('#timelinebutton').removeClass("btn-success");
-            $('#writebutton').removeClass("btn-success");
-            $('#searchbutton').removeClass("btn-success");
-            $('#favoritebutton').addClass("btn-success");
+            $('.navbar-btn').removeClass("btn-success");
+            $(this).addClass("btn-success");
         });
 
         var favQuotes = function(array){
@@ -247,11 +238,8 @@ $(document).ready(function() {
             var myData = JSON.parse(xhr.responseText);
             quoteBuilder(myData);
         })
-        $('#timelinebutton').addClass("btn-success");
-        $('#quotesbutton').removeClass("btn-success");
-        $('#favoritebutton').removeClass("btn-success");
-        $('#writebutton').removeClass("btn-success");
-        $('#searchbutton').removeClass("btn-success");
+        $('.navbar-btn').removeClass("btn-success");
+        $(this).addClass("btn-success");
     });
 
     var quoteBuilder = function(array){
@@ -329,11 +317,8 @@ $(document).ready(function() {
         $('#writequotes').removeClass("hide");
         $('#favoritequotes').addClass("hide");
         $('#searchquotes').addClass("hide");
-        $('#timelinebutton').removeClass("btn-success");
-        $('#quotesbutton').removeClass("btn-success");
-        $('#favoritebutton').removeClass("btn-success");
-        $('#writebutton').addClass("btn-success");
-        $('#searchbutton').removeClass("btn-success");
+        $('.navbar-btn').removeClass("btn-success");
+        $(this).addClass("btn-success");
     });
 
     $('#writequote').click(function(){
@@ -361,4 +346,9 @@ $(document).ready(function() {
           $('#quotecontent').val('');
       })
     });
+// THE TAG SECTION
+    $('.tag').click(function(){
+      $('.tag').removeClass("green");
+      $(this).addClass("green");
+    })
 });
