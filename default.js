@@ -360,6 +360,10 @@ $(document).ready(function() {
       xhr.setRequestHeader("Content-Type","application/json");
       xhr.send(payload);
       xhr.addEventListener('load',function(){
+        var data = JSON.parse(xhr.responseText);
+        console.log(data);
+        $('#quoteresults').empty()
+        quoteBuilder(data);
       });
     })
 });
