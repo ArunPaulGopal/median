@@ -27,10 +27,11 @@
               <i class="fa fa-quote-right"></i>
           </div>
           <div class="btn-group pull-right" role="group">
-            <button class="btn btn-default navbar-btn" id="searchbutton">Search Q</button>
-            <button class="btn btn-default navbar-btn" id="writebutton">Write Q</button>
-            <button class="btn btn-default navbar-btn" id="quotesbutton">My Q</button>
-            <button class="btn btn-default navbar-btn" id="timelinebutton">World Q</button>
+            <button class="btn btn-default navbar-btn" id="searchbutton">Search</button>
+            <button class="btn btn-default navbar-btn" id="writebutton">Write</button>
+            <button class="btn btn-default navbar-btn" id="quotesbutton">Me</button>
+            <button class="btn btn-default navbar-btn" id="favoritebutton">Fav</button>
+            <button class="btn btn-default navbar-btn" id="timelinebutton">World</button>
           </div>
         </div>
       </nav>
@@ -81,7 +82,7 @@
     </div>
     <div class="container hide" id="yourquotes">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8 col-md-offset-2">
           <div class="panel panel-primary">
             <strong><h3 class="text-center">Your Quotes</h3></strong>
             <div class="panel-body">
@@ -92,12 +93,16 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+      </div>
+    </div>
+    <div class="container hide" id="favoritequotes">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
           <div class="panel panel-primary">
             <strong><h3 class="text-center">Favorite Quotes</h3></strong>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-12" id="favoriteresults">
+                <div class="col-md-12" id="favoritequoteresults">
                 </div>
               </div>
             </div>
