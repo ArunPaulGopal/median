@@ -46,7 +46,8 @@ $(document).ready(function() {
             searchBuilder(myData)
           }
           else {
-            //APPEND FAILURE MESSAGE
+            $('#searchresults').append("<h1 class='text-center text-danger'>Please use a better search term to find videos!(Hint: Common words like 'the' will work!)</h1>");
+            $('#searchresults').append("<img src='404.jpg' class='center-block'>");
           }
       })
     });
@@ -333,8 +334,6 @@ $(document).ready(function() {
         $('#favoritebutton').removeClass("btn-success");
         $('#writebutton').addClass("btn-success");
         $('#searchbutton').removeClass("btn-success");
-        $('#quotetitle').val('');
-        $('#quotecontent').val('');
     });
 
     $('#writequote').click(function(){
@@ -357,7 +356,9 @@ $(document).ready(function() {
       xhr.setRequestHeader("Content-Type","application/json");
       xhr.send(payload);
       xhr.addEventListener('load',function(){
-          $('#temporaryresults').append("SUCCESS! ADD ANOTHER quote OR GO TO YOUR quoteS TO SEE!");
+          alert('Your quote has been added! Please go to "My Quotes" to see your quote or write another!');
+          $('#quotetitle').val('');
+          $('#quotecontent').val('');
       })
     });
 });
