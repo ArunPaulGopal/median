@@ -344,11 +344,22 @@ $(document).ready(function() {
           alert('Your quote has been added! Please go to "My Quotes" to see your quote or write another!');
           $('#quotetitle').val('');
           $('#quotecontent').val('');
-      })
+      });
     });
 // THE TAG SECTION
     $('.tag').click(function(){
       $('.tag').removeClass("green");
       $(this).addClass("green");
+      var tagID = $(this).attr('id');
+      var myData = {
+        tagid : tagID
+      };
+      var payload =JSON.stringify(myData);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST','/tagquotes');
+      xhr.setRequestHeader("Content-Type","application/json");
+      xhr.send(payload);
+      xhr.addEventListener('load',function(){
+      });
     })
 });

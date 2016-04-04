@@ -35,7 +35,18 @@ app.post('/favbuild', jsonParser, function(req, res) {
   res.json(favArray);
 });
 
+app.post('/tagquotes', jsonParser, function(req, res) {
+  console.log(req.body.tagid);
+  var tagArray =[];
+  tagBuild();
+  res.json(tagArray);
+});
+
 app.listen(8080);
+
+var tagBuild = function (object,toSearch,myArray) {
+
+}
 
 var searchQuery = function (object,toSearch,myArray) {
   for (var i=0; i<object.length; i++) {
