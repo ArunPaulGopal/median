@@ -94,8 +94,19 @@ $(document).ready(function() {
             $('#searchresults').append(panel);
           }
         }
-        $('.fa').click(function(){
-          console.log("hi");
+        $('.favorite').click(function(){
+          var xhr = new XMLHttpRequest();
+          var thisID = $(this).attr('id');
+          var myData = {
+            favid : thisID
+          };
+          var payload =JSON.stringify(myData);
+          xhr.open('POST','/favquotes');
+          xhr.setRequestHeader("Content-Type","application/json");
+          xhr.send(payload);
+          xhr.addEventListener('load',function(){
+            console.log("Back-end returned something")
+          });
       });
     }
 //MY QUOTES SECTION
@@ -189,7 +200,6 @@ $(document).ready(function() {
           icon.setAttribute('id',array[i].quoteid);
           $(image).addClass('img-rounded thumbnail');
           image.setAttribute('src',imagesrc);
-          $(attribute).addClass('favorite');
           $(media).addClass('media');
           $(mediabody).addClass('media-body');
           $(medialeft).addClass('media-left');
@@ -206,22 +216,31 @@ $(document).ready(function() {
           $(panel).append(panelhead);
           $(panel).append(panelbody);
           if(array[i].fav == false){
-            $(icon).addClass('fa fa-heart-o fa-2x');
-            $(attribute).append(icon);
-            $(panelfooter).append(attribute);
+            $(icon).addClass('fa fa-heart-o fa-2x favorite');
+            $(panelfooter).append(icon);
             $(panel).append(panelfooter);
             $('#quoteresults').append(panel);
           }
           else {
-            $(icon).addClass('fa fa-heart fa-2x');
-            $(attribute).append(icon);
-            $(panelfooter).append(attribute);
+            $(icon).addClass('fa fa-heart fa-2x favorite');
+            $(panelfooter).append(icon);
             $(panel).append(panelfooter);
             $('#quoteresults').append(panel);
           }
         }
-        $('.fa').click(function(){
-          console.log("hi");
+        $('.favorite').click(function(){
+          var xhr = new XMLHttpRequest();
+          var thisID = $(this).attr('id');
+          var myData = {
+            favid : thisID
+          };
+          var payload =JSON.stringify(myData);
+          xhr.open('POST','/favquotes');
+          xhr.setRequestHeader("Content-Type","application/json");
+          xhr.send(payload);
+          xhr.addEventListener('load',function(){
+            console.log("Back-end returned something")
+          });
       });
     }
 //WRITE QUOTE SECTION
