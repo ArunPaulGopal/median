@@ -85,13 +85,13 @@ $(document).ready(function() {
           $(panel).append(panelhead);
           $(panel).append(panelbody);
           if(array[i].fav == false){
-            $(icon).addClass('fa fa-heart-o fa-2x favorite');
+            $(icon).addClass('fa fa-heart-o fa-2x favorite red');
             $(panelfooter).append(icon);
             $(panel).append(panelfooter);
             $('#searchresults').append(panel);
           }
           else {
-            $(icon).addClass('fa fa-heart fa-2x favorite');
+            $(icon).addClass('fa fa-heart fa-2x favorite red');
             $(panelfooter).append(icon);
             $(panel).append(panelfooter);
             $('#searchresults').append(panel);
@@ -288,13 +288,13 @@ $(document).ready(function() {
           $(panel).append(panelhead);
           $(panel).append(panelbody);
           if(array[i].fav == false){
-            $(icon).addClass('fa fa-heart-o fa-2x favorite');
+            $(icon).addClass('fa fa-heart-o fa-2x favorite red');
             $(panelfooter).append(icon);
             $(panel).append(panelfooter);
             $('#quoteresults').append(panel);
           }
           else {
-            $(icon).addClass('fa fa-heart fa-2x favorite');
+            $(icon).addClass('fa fa-heart fa-2x favorite red');
             $(panelfooter).append(icon);
             $(panel).append(panelfooter);
             $('#quoteresults').append(panel);
