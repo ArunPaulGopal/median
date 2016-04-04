@@ -76,45 +76,67 @@ var allquotes = [
             {
                 quotetitle: "quote TITLE should return",
                 quoteimage: "quote.jpeg",
-                quotecontent: "Lorem test ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                quotecontent: "We are what we repeatedly do. Excellence, therefore, is not an act but a habit.",
+                quoteauthor: "Aristotle",
                 quoteid:1,
-                fav:true
+                fav:false
             },
             {
-                quotetitle: "test",
+                quotetitle: "quote TITLE should return",
                 quoteimage: "quote.jpeg",
-                quotecontent: "Lorem ipsum TEST dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                quotecontent: "Take calculated risks. That is quite different from being rash.",
+                quoteauthor: "George S. Patton",
                 quoteid:2,
-                fav:true
+                fav:false
             },
             {
-                quotetitle: "quote TITLE",
+                quotetitle: "quote TITLE should return",
                 quoteimage: "quote.jpeg",
-                quotecontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                quotecontent: "The best way out is always through.",
+                quoteauthor: "Robert Frost",
                 quoteid:3,
                 fav:false
             },
             {
-                quotetitle: "quote TITLE",
+                quotetitle: "quote TITLE should return",
                 quoteimage: "quote.jpeg",
-                quotecontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                quotecontent: "Life consists not in holding good cards, but in playing those you hold well.",
+                quoteauthor: "Josh Billings",
                 quoteid:4,
                 fav:false
             },
             {
-                quotetitle: "quote TITLE",
+                quotetitle: "quote TITLE should return",
                 quoteimage: "quote.jpeg",
-                quotecontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                quotecontent: "Hope is like the sun, which, as we journey toward it, casts the shadow of our burden behind us.",
+                quoteauthor: "Samuel Smiles",
                 quoteid:5,
                 fav:false
             },
             {
-                quotetitle: "quote TITLE",
+                quotetitle: "quote TITLE should return",
                 quoteimage: "quote.jpeg",
-                quotecontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                quotecontent: "Work spares us from three evils: boredom, vice, and need.",
+                quoteauthor: "Voltaire",
                 quoteid:6,
                 fav:false
-            }
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "We are still masters of our fate. We are still captains of our souls.",
+                quoteauthor: "Winston Churchill",
+                quoteid:7,
+                fav:false
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "he wise man should be prepared for everything that does not lie within his control.",
+                quoteauthor: "Pythagoras",
+                quoteid:8,
+                fav:false
+            },
 ];
 
 var myquotes = [

@@ -53,7 +53,7 @@ $(document).ready(function() {
 
     var searchBuilder = function(array){
         for (i=0; i<array.length; i++){
-          var title = array[i].quotetitle;
+          var title = array[i].quoteauthor;
           var content = array[i].quotecontent;
           var imagesrc = array[i].quoteimage;
           var media = document.createElement('div');
@@ -69,7 +69,7 @@ $(document).ready(function() {
           $(image).addClass('img-rounded thumbnail');
           image.setAttribute('src',imagesrc);
           $(media).addClass('media');
-          $(mediabody).addClass('media-body');
+          $(mediabody).addClass('media-body text-center');
           $(medialeft).addClass('media-left');
           $(panel).addClass('panel panel-success');
           $(panelhead).addClass('panel-heading text-center');
@@ -78,7 +78,7 @@ $(document).ready(function() {
           $(medialeft).append(image);
           $(panelhead).append(title);
           $(mediabody).append(content);
-          $(media).append(medialeft);
+          //$(media).append(medialeft);
           $(media).append(mediabody);
           $(panelbody).append(media);
           $(panel).append(panelhead);
@@ -142,7 +142,7 @@ $(document).ready(function() {
 
     var myquotes = function(array){
         for (i=0; i<array.length; i++){
-            var title = array[i].quotetitle;
+            var title = array[i].quotetime;
             var content = array[i].quotecontent;
             var imagesrc = array[i].quoteimage;
             var media = document.createElement('div');
@@ -156,7 +156,7 @@ $(document).ready(function() {
             image.setAttribute('src',imagesrc);
             $(image).addClass('img-rounded thumbnail');
             $(media).addClass('media');
-            $(mediabody).addClass('media-body');
+            $(mediabody).addClass('media-body text-center');
             $(medialeft).addClass('media-left');
             $(panel).addClass('panel panel-success');
             $(panelhead).addClass('panel-heading text-center');
@@ -165,7 +165,7 @@ $(document).ready(function() {
             $(medialeft).append(image);
             $(panelhead).append(title);
             $(mediabody).append(content);
-            $(media).append(medialeft);
+            //$(media).append(medialeft);
             $(media).append(mediabody);
             $(panelbody).append(media);
             $(panel).append(panelhead);
@@ -197,7 +197,7 @@ $(document).ready(function() {
 
         var favQuotes = function(array){
             for (i=0; i<array.length; i++){
-                var title = array[i].quotetitle;
+                var title = array[i].quoteauthor;
                 var content = array[i].quotecontent;
                 var imagesrc = array[i].quoteimage;
                 var media = document.createElement('div');
@@ -211,7 +211,7 @@ $(document).ready(function() {
                 image.setAttribute('src',imagesrc);
                 $(image).addClass('img-rounded thumbnail');
                 $(media).addClass('media');
-                $(mediabody).addClass('media-body');
+                $(mediabody).addClass('media-body text-center');
                 $(medialeft).addClass('media-left');
                 $(panel).addClass('panel panel-success');
                 $(panelhead).addClass('panel-heading text-center');
@@ -220,7 +220,7 @@ $(document).ready(function() {
                 $(medialeft).append(image);
                 $(panelhead).append(title);
                 $(mediabody).append(content);
-                $(media).append(medialeft);
+                //$(media).append(medialeft);
                 $(media).append(mediabody);
                 $(panelbody).append(media);
                 $(panel).append(panelhead);
@@ -252,7 +252,7 @@ $(document).ready(function() {
 
     var quoteBuilder = function(array){
         for (i=0; i<array.length; i++){
-          var title = array[i].quotetitle;
+          var title = array[i].quoteauthor;
           var content = array[i].quotecontent;
           var imagesrc = array[i].quoteimage;
           var media = document.createElement('div');
@@ -269,7 +269,7 @@ $(document).ready(function() {
           $(image).addClass('img-rounded thumbnail');
           image.setAttribute('src',imagesrc);
           $(media).addClass('media');
-          $(mediabody).addClass('media-body');
+          $(mediabody).addClass('media-body text-center');
           $(medialeft).addClass('media-left');
           $(panel).addClass('panel panel-success');
           $(panelhead).addClass('panel-heading text-center');
@@ -278,7 +278,7 @@ $(document).ready(function() {
           $(medialeft).append(image);
           $(panelhead).append(title);
           $(mediabody).append(content);
-          $(media).append(medialeft);
+          //$(media).append(medialeft);
           $(media).append(mediabody);
           $(panelbody).append(media);
           $(panel).append(panelhead);
@@ -335,15 +335,15 @@ $(document).ready(function() {
     $('#writequote').click(function(){
       var content = $('#quotecontent').val();
       var title = $('#quotetitle').val();
+      var date = new Date();
       var myData = {
+        quotetime: date,
         quotetitle:title,
         quoteimage:"quote.jpeg",
         quotecontent:content,
         tag:"something"
       };
-      console.log(myData);
       var payload = JSON.stringify(myData);
-      console.log(payload);
       var xhr = new XMLHttpRequest();
       xhr.open('POST','/writequotes');
       xhr.setRequestHeader("Content-Type","application/json");
