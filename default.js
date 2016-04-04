@@ -25,6 +25,8 @@ $(document).ready(function() {
         $('#favoritebutton').removeClass("btn-success");
         $('#writebutton').removeClass("btn-success");
         $('#searchbutton').addClass("btn-success");
+        $('#searchresults').empty();
+        $('#searchstring').val('');
     });
 
     $('#startsearch').click(function(){

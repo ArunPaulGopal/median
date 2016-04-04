@@ -132,7 +132,7 @@ var allquotes = [
             {
                 quotetitle: "quote TITLE should return",
                 quoteimage: "quote.jpeg",
-                quotecontent: "he wise man should be prepared for everything that does not lie within his control.",
+                quotecontent: "The wise man should be prepared for everything that does not lie within his control.",
                 quoteauthor: "Pythagoras",
                 quoteid:8,
                 fav:false
