@@ -34,9 +34,7 @@ $(document).ready(function() {
       var mySearch = {
         search:content
       };
-      console.log(mySearch);
       var payload = JSON.stringify(mySearch);
-      console.log(payload);
       var xhr = new XMLHttpRequest();
       xhr.open('POST','/searchquotes');
       xhr.setRequestHeader("Content-Type","application/json");

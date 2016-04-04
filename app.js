@@ -32,7 +32,6 @@ app.post('/favquotes', jsonParser, function(req, res) {
 app.post('/favbuild', jsonParser, function(req, res) {
   var favArray =[];
   favBuild(allquotes,favArray);
-  console.log(favArray);
   res.json(favArray);
 });
 
@@ -137,20 +136,84 @@ var allquotes = [
                 quoteid:8,
                 fav:false
             },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "Approach the game with no preset agendas and you'll probably come away surprised at your overall efforts.",
+                quoteauthor: "Phil Jackson",
+                quoteid:9,
+                fav:false
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "Don't cry because it's over, smile because it happened.",
+                quoteauthor: "Dr. Seuss",
+                quoteid:10,
+                fav:false
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "Be yourself; everyone else is already taken.",
+                quoteauthor: "Oscar Wilde",
+                quoteid:11,
+                fav:false
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "If you tell the truth, you don't have to remember anything.",
+                quoteauthor: "Mark Twain",
+                quoteid:12,
+                fav:false
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+                quoteauthor: "Mahatma Gandhi",
+                quoteid:13,
+                fav:false
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "If you tell the truth, you don't have to remember anything.",
+                quoteauthor: "Mark Twain",
+                quoteid:14,
+                fav:false
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+                quoteauthor: "Ralph Waldo Emerson",
+                quoteid:15,
+                fav:false
+            },
+            {
+                quotetitle: "quote TITLE should return",
+                quoteimage: "quote.jpeg",
+                quotecontent: "The opposite of love is not hate, it's indifference. The opposite of art is not ugliness, it's indifference. The opposite of faith is not heresy, it's indifference. And the opposite of life is not death, it's indifference.",
+                quoteauthor: "Ellie Wiesel",
+                quoteid:16,
+                fav:false
+            }
 ];
 
 var myquotes = [
   {
       quotetitle: "MY quote TITLE",
       quoteimage: "quote.jpeg",
-      quotecontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      quotecontent: "Sum your friends, family, possessions. Can you still be a happy human being if you were to lose it all?",
       tag:"ISIS",
       quotetime: "1/1/2016"
   },
   {
       quotetitle: "MY quote TITLE",
       quoteimage: "quote.jpeg",
-      quotecontent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      quotecontent: "It is vain to do with more what can be done with less.",
       tag:"MOVIES",
       quotetime: "1/1/2016"
   }
