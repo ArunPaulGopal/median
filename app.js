@@ -25,7 +25,7 @@ app.post('/searchquotes', jsonParser, function(req, res) {
 });
 
 app.post('/favquotes', jsonParser, function(req, res) {
-  idQuery(allquotes,req.body.favid);
+  favToggle(allquotes,req.body.favid);
   res.json();
 });
 
@@ -41,18 +41,16 @@ var searchQuery = function (object,toSearch,myArray) {
   };
 };
 
-var idQuery = function (object,idtarget) {
+var favToggle = function (object,idtarget) {
   for (var i=0; i<object.length; i++) {
     var objectid = object[i].quoteid;
     var objectfav = object[i].fav;
     if(objectid == idtarget) {
       if(objectfav == true) {
-        object[i].fav = false
-        console.log(object[i].fav)
+        object[i].fav = false;
       }
       if(objectfav == false){
-        object[i].fav = true
-        console.log(object[i].fav)
+        object[i].fav = true;
       }
     }
   }

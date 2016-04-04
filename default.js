@@ -95,6 +95,14 @@ $(document).ready(function() {
           }
         }
         $('.favorite').click(function(){
+          if($(this).hasClass("fa-heart-o")){
+            $(this).addClass("fa-heart");
+            $(this).removeClass("fa-heart-o");
+          }
+          else{
+            $(this).addClass("fa-heart-o");
+            $(this).removeClass("fa-heart");
+          }
           var xhr = new XMLHttpRequest();
           var thisID = $(this).attr('id');
           var myData = {
@@ -105,7 +113,6 @@ $(document).ready(function() {
           xhr.setRequestHeader("Content-Type","application/json");
           xhr.send(payload);
           xhr.addEventListener('load',function(){
-            console.log("Back-end returned something")
           });
       });
     }
@@ -229,6 +236,14 @@ $(document).ready(function() {
           }
         }
         $('.favorite').click(function(){
+          if($(this).hasClass("fa-heart-o")){
+            $(this).addClass("fa-heart");
+            $(this).removeClass("fa-heart-o");
+          }
+          else{
+            $(this).addClass("fa-heart-o");
+            $(this).removeClass("fa-heart");
+          }
           var xhr = new XMLHttpRequest();
           var thisID = $(this).attr('id');
           var myData = {
@@ -239,7 +254,6 @@ $(document).ready(function() {
           xhr.setRequestHeader("Content-Type","application/json");
           xhr.send(payload);
           xhr.addEventListener('load',function(){
-            console.log("Back-end returned something")
           });
       });
     }
