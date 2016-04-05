@@ -1,4 +1,13 @@
 $(document).ready(function() {
+//SIGN UP FEATURE
+    $('#signup').click(function(){
+      $('#loginarea').addClass("hide");
+      $('#signuparea').removeClass("hide");
+    })
+    $('#setup').click(function(){
+      $('#loginarea').removeClass("hide");
+      $('#signuparea').addClass("hide");
+    })
 //LOGIN FEATURE
     $('#login').click(function(){
       //GET INFO READY TO PASS TO BACK-END
