@@ -8,6 +8,13 @@ app.get('/quotes', function(req, res) {
   res.json(allquotes);
 });
 
+app.post('/login', jsonParser, function(req, res) {
+  var status =[];
+  userCheck(userinfo,req.body.username,req.body.password,status);
+  console.log(status);
+  res.json(status);
+});
+
 app.post('/yourquotes', jsonParser, function(req, res) {
   var quoteArray =[];
   userBuild(userquotes,req.body.username,quoteArray);
@@ -45,6 +52,17 @@ app.post('/tagquotes', jsonParser, function(req, res) {
 
 app.listen(8080);
 
+var userCheck = function (object,user,pw,myArray) {
+  for (var i=0; i<object.length; i++) {
+      var username = object[i].username;
+      var password = object[i].password;
+      if(username === user & password ===pw) {
+        myArray.push("1");
+      }
+  };
+}
+
+
 var userBuild = function (object,toSearch,myArray) {
   for (var i=0; i<object.length; i++) {
       var username = object[i].username;
@@ -53,7 +71,6 @@ var userBuild = function (object,toSearch,myArray) {
       }
   };
 }
-
 
 var tagBuild = function (object,toSearch,myArray) {
   for (var i=0; i<object.length; i++) {
@@ -311,5 +328,18 @@ var userquotes = [
       quotetitle: "Roar",
       quotecontent: "Roar more, Tweet Less",
       quotetime: "1/1/2016"
+  }
+];
+
+var userinfo = [
+  {
+    username: "Arun",
+    password: "G",
+    favorites: []
+  },
+  {
+    username: "Mike",
+    password: "F",
+    favorites: []
   }
 ]

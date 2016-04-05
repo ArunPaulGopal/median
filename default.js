@@ -1,26 +1,38 @@
 $(document).ready(function() {
 //LOAD UP TIMELINE UPON ENTRY OF WEBSITE
-    $('#enter').click(function(){
-        $('#timeline').toggleClass("hide");
-        $('#welcome').toggleClass("hide");
-        $('#navbar').toggleClass("hide");
+    $('#login').click(function(){
         var username = $('#username').val();
-        Cookies.remove('username');
-        Cookies.set('username',username);
+        var password = $('#password').val();
+        var myData = {
+          username: username,
+          password: password
+        }
+        var payload = JSON.stringify(myData);
         var xhr = new XMLHttpRequest();
-        xhr.open('GET','/quotes');
-        xhr.send(null);
+        xhr.open('POST','/login');
+        xhr.setRequestHeader("Content-Type","application/json");
+        xhr.send(payload);
         xhr.addEventListener('load',function(){
-            var myData = JSON.parse(xhr.responseText);
-            quoteBuilder(myData);
+            var newdata = JSON.parse(xhr.responseText);
+            console.log(newdata[0]);
+            if (newdata[0] == 1) {
+              Cookies.remove('username');
+              Cookies.set('username',username);
+              $('#searchquotes').toggleClass("hide");
+              $('#welcome').toggleClass("hide");
+              $('#navbar').toggleClass("hide");
+              $('.navbar-btn').removeClass("btn-success");
+              $('#searchbutton').addClass("btn-success");
+            }
+            else{
+              alert("Please try another attempt");
+            }
         })
-        $('.navbar-btn').removeClass("btn-success");
-        $('#timelinebutton').addClass("btn-success");
     });
 //LOGOUT: COOKIE RESET ALREADY HANDLED ABOVE
     $('#logout').click(function(){
         $('#username').val('');
-        $('#password').val(''); 
+        $('#password').val('');
         $('.pagecontent').addClass("hide");
         $('#welcome').removeClass("hide");
     });
@@ -350,7 +362,6 @@ $(document).ready(function() {
         quotecontent:content,
         quotetime: currentDate + "/" + month + "/" + year,
       };
-      console.log(myData);
       var payload = JSON.stringify(myData);
       var xhr = new XMLHttpRequest();
       xhr.open('POST','/writequotes');
@@ -376,7 +387,6 @@ $(document).ready(function() {
       xhr.send(payload);
       xhr.addEventListener('load',function(){
         var data = JSON.parse(xhr.responseText);
-        console.log(data);
         $('#quoteresults').empty()
         quoteBuilder(data);
       });
