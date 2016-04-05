@@ -11,7 +11,6 @@ app.get('/quotes', function(req, res) {
 app.post('/login', jsonParser, function(req, res) {
   var status =[];
   userCheck(userinfo,req.body.username,req.body.password,status);
-  console.log(status);
   res.json(status);
 });
 
@@ -61,7 +60,6 @@ var userCheck = function (object,user,pw,myArray) {
       }
   };
 }
-
 
 var userBuild = function (object,toSearch,myArray) {
   for (var i=0; i<object.length; i++) {

@@ -1,6 +1,7 @@
 $(document).ready(function() {
-//LOAD UP TIMELINE UPON ENTRY OF WEBSITE
+//LOGIN FEATURE
     $('#login').click(function(){
+      //GET INFO READY TO PASS TO BACK-END
         var username = $('#username').val();
         var password = $('#password').val();
         var myData = {
@@ -14,29 +15,30 @@ $(document).ready(function() {
         xhr.send(payload);
         xhr.addEventListener('load',function(){
             var newdata = JSON.parse(xhr.responseText);
-            console.log(newdata[0]);
+            //IF USERNAME AND PW HITS A MATCH IN BACK-END, 1 will be present
             if (newdata[0] == 1) {
               Cookies.remove('username');
               Cookies.set('username',username);
-              $('#searchquotes').toggleClass("hide");
+              $('#writequotes').toggleClass("hide");
               $('#welcome').toggleClass("hide");
               $('#navbar').toggleClass("hide");
               $('.navbar-btn').removeClass("btn-success");
-              $('#searchbutton').addClass("btn-success");
+              $('#writebutton').addClass("btn-success");
             }
             else{
-              alert("Please try another attempt");
+              alert("Please try another PW attempt");
             }
         })
     });
-//LOGOUT: COOKIE RESET ALREADY HANDLED ABOVE
+//LOGOUT: COOKIE RESET ALREADY HANDLED ABOVE,ALLOWS NEW USER TO LOGIN
     $('#logout').click(function(){
         $('#username').val('');
         $('#password').val('');
         $('.pagecontent').addClass("hide");
         $('#welcome').removeClass("hide");
     });
-// Search SECTION
+// SEARCH SECTION
+  //Change appearance of DOM and buttons
     $('#searchbutton').click(function(){
         $('#timeline').addClass("hide");
         $('#yourquotes').addClass("hide");
@@ -48,7 +50,7 @@ $(document).ready(function() {
         $('#searchresults').empty();
         $('#searchstring').val('');
     });
-
+  //When search button is clicked, check all quote content for any match. If none, append image and message
     $('#startsearch').click(function(){
       var content = $('#searchstring').val();
       var mySearch = {
@@ -71,7 +73,7 @@ $(document).ready(function() {
           }
       })
     });
-
+    //Function to build search results upon success
     var searchBuilder = function(array){
         for (i=0; i<array.length; i++){
           var title = array[i].quoteauthor;
