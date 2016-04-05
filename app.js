@@ -9,11 +9,11 @@ app.get('/quotes', function(req, res) {
 });
 
 app.get('/yourquotes', function(req, res) {
-  res.json(myquotes);
+  res.json(userquotes);
 });
 
 app.post('/writequotes', jsonParser, function(req, res) {
-  myquotes.push(req.body);
+  userquotes.push(req.body);
   res.json();
 });
 
@@ -89,7 +89,6 @@ var favToggle = function (object,idtarget) {
 var allquotes = [
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "We are what we repeatedly do. Excellence, therefore, is not an act but a habit.",
                 quoteauthor: "Aristotle",
                 quoteid:1,
@@ -98,7 +97,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Take calculated risks. That is quite different from being rash.",
                 quoteauthor: "George S. Patton",
                 quoteid:2,
@@ -107,7 +105,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "The best way out is always through.",
                 quoteauthor: "Robert Frost",
                 quoteid:3,
@@ -116,7 +113,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Life consists not in holding good cards, but in playing those you hold well.",
                 quoteauthor: "Josh Billings",
                 quoteid:4,
@@ -125,7 +121,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Hope is like the sun, which, as we journey toward it, casts the shadow of our burden behind us.",
                 quoteauthor: "Samuel Smiles",
                 quoteid:5,
@@ -134,7 +129,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Work spares us from three evils: boredom, vice, and need.",
                 quoteauthor: "Voltaire",
                 quoteid:6,
@@ -143,7 +137,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "We are still masters of our fate. We are still captains of our souls.",
                 quoteauthor: "Winston Churchill",
                 quoteid:7,
@@ -152,7 +145,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "The wise man should be prepared for everything that does not lie within his control.",
                 quoteauthor: "Pythagoras",
                 quoteid:8,
@@ -161,7 +153,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Approach the game with no preset agendas and you'll probably come away surprised at your overall efforts.",
                 quoteauthor: "Phil Jackson",
                 quoteid:9,
@@ -170,7 +161,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Don't cry because it's over, smile because it happened.",
                 quoteauthor: "Dr. Seuss",
                 quoteid:10,
@@ -179,7 +169,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Be yourself; everyone else is already taken.",
                 quoteauthor: "Oscar Wilde",
                 quoteid:11,
@@ -188,7 +177,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "If you tell the truth, you don't have to remember anything.",
                 quoteauthor: "Mark Twain",
                 quoteid:12,
@@ -197,7 +185,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Live as if you were to die tomorrow. Learn as if you were to live forever.",
                 quoteauthor: "Mahatma Gandhi",
                 quoteid:13,
@@ -206,7 +193,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "If you tell the truth, you don't have to remember anything.",
                 quoteauthor: "Mark Twain",
                 quoteid:14,
@@ -215,7 +201,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
                 quoteauthor: "Ralph Waldo Emerson",
                 quoteid:15,
@@ -224,7 +209,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "The opposite of love is not hate, it's indifference. The opposite of art is not ugliness, it's indifference. The opposite of faith is not heresy, it's indifference. And the opposite of life is not death, it's indifference.",
                 quoteauthor: "Ellie Wiesel",
                 quoteid:16,
@@ -233,7 +217,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "You’ll never be as lazy as whoever named the fireplace.",
                 quoteauthor: "Troll",
                 quoteid:17,
@@ -242,7 +225,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Hate to break it to you Facebook, but the entire internet is a dislike button",
                 quoteauthor: "Josh Groban",
                 quoteid:18,
@@ -251,7 +233,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Don’t walk in front of me… I may not follow Don’t walk behind me… I may not lead Walk beside me… just be my friend",
                 quoteauthor: "Albert Camus",
                 quoteid:19,
@@ -260,7 +241,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Good friends, good books, and a sleepy conscience: this is the ideal life.",
                 quoteauthor: "Mark Twain",
                 quoteid:20,
@@ -269,7 +249,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for.",
                 quoteauthor: "Bob Marley",
                 quoteid:21,
@@ -278,7 +257,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "Reader, suppose you were an idiot. And suppose you were a member of Congress. But I repeat myself.",
                 quoteauthor: "Mark Twain",
                 quoteid:22,
@@ -287,7 +265,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "There comes a time when one must take a position that is neither safe, nor politic, nor popular, but he must take it because conscience tells him it is right.",
                 quoteauthor: "Martin Luther King Jr.",
                 quoteid:23,
@@ -296,7 +273,6 @@ var allquotes = [
             },
             {
                 quotetitle: "quote TITLE should return",
-                quoteimage: "quote.jpeg",
                 quotecontent: "You're not to be so blind with patriotism that you can't face reality. Wrong is wrong, no matter who does it or says it.",
                 quoteauthor: "Malcolm X",
                 quoteid:24,
@@ -305,19 +281,23 @@ var allquotes = [
             }
 ];
 
-var myquotes = [
+var userquotes = [
   {
+      username: "Arun",
       quotetitle: "Age and Learning",
-      quoteimage: "quote.jpeg",
       quotecontent: "Some people die at 25 but aren't buried until 75.",
-      tag:"ISIS",
       quotetime: "1/1/2016"
   },
   {
+      username: "Arun",
       quotetitle: "Occam",
-      quoteimage: "quote.jpeg",
       quotecontent: "It is vain to do with more what can be done with less.",
-      tag:"MOVIES",
+      quotetime: "1/1/2016"
+  },
+  {
+      username: "Mike",
+      quotetitle: "Roar",
+      quotecontent: "Roar more, Tweet Less",
       quotetime: "1/1/2016"
   }
 ]

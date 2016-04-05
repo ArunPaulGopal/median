@@ -5,6 +5,7 @@ $(document).ready(function() {
         $('#welcome').toggleClass("hide");
         $('#navbar').toggleClass("hide");
         var username = $('#username').val();
+        Cookies.remove('username');
         Cookies.set('username',username);
         var xhr = new XMLHttpRequest();
         xhr.open('GET','/quotes');
@@ -331,12 +332,12 @@ $(document).ready(function() {
       var month = date.getMonth() + 1;
       var year = date.getFullYear();
       var myData = {
-        quotetime: currentDate + "/" + month + "/" + year,
+        username: Cookies.get('username'),
         quotetitle:title,
-        quoteimage:"quote.jpeg",
         quotecontent:content,
-        tag:"something"
+        quotetime: currentDate + "/" + month + "/" + year,
       };
+      console.log(myData);
       var payload = JSON.stringify(myData);
       var xhr = new XMLHttpRequest();
       xhr.open('POST','/writequotes');
