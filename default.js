@@ -341,7 +341,6 @@ $(document).ready(function() {
       xhr.setRequestHeader("Content-Type","application/json");
       xhr.send(payload);
       xhr.addEventListener('load',function(){
-          alert('Your quote has been added! Please go to "My Quotes" to see your quote or write another!');
           $('#quotetitle').val('');
           $('#quotecontent').val('');
       });

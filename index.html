@@ -95,7 +95,7 @@
               <div class="input-group">
                   <input type="text" class="form-control" id="searchstring">
                   <span class="input-group-btn">
-                      <button class="btn btn-default" id="startsearch" type="button">
+                      <button class="btn btn-success" id="startsearch" type="button">
                           <span class="glyphicon glyphicon-search"></span>
                   </button>
                   </span>
@@ -126,7 +126,23 @@
               <textarea class="form-control" id="quotecontent" rows="10" placeholder="Quote Content"></textarea>
             </div>
           </form>
-          <button class="btn btn-default" id="writequote">Submit</button>
+          <button class="btn btn-success btn-lg" id="writequote" data-toggle="modal" data-target="#myModal">Submit your Quote</button>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Your quote has been added! Please go to Your Quotes section to review, or add another!</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
