@@ -17,6 +17,13 @@ $(document).ready(function() {
         $('.navbar-btn').removeClass("btn-success");
         $('#timelinebutton').addClass("btn-success");
     });
+//LOGOUT: COOKIE RESET ALREADY HANDLED ABOVE
+    $('#logout').click(function(){
+        $('#username').val('');
+        $('#password').val(''); 
+        $('.pagecontent').addClass("hide");
+        $('#welcome').removeClass("hide");
+    });
 // Search SECTION
     $('#searchbutton').click(function(){
         $('#timeline').addClass("hide");
