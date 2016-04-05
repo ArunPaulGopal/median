@@ -4,6 +4,8 @@ $(document).ready(function() {
         $('#timeline').toggleClass("hide");
         $('#welcome').toggleClass("hide");
         $('#navbar').toggleClass("hide");
+        var username = $('#username').val();
+        Cookies.set('username',username);
         var xhr = new XMLHttpRequest();
         xhr.open('GET','/quotes');
         xhr.send(null);
