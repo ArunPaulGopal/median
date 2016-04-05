@@ -8,8 +8,10 @@ app.get('/quotes', function(req, res) {
   res.json(allquotes);
 });
 
-app.get('/yourquotes', function(req, res) {
-  res.json(userquotes);
+app.post('/yourquotes', jsonParser, function(req, res) {
+  var quoteArray =[];
+  userBuild(userquotes,req.body.username,quoteArray);
+  res.json(quoteArray);
 });
 
 app.post('/writequotes', jsonParser, function(req, res) {
@@ -42,6 +44,16 @@ app.post('/tagquotes', jsonParser, function(req, res) {
 });
 
 app.listen(8080);
+
+var userBuild = function (object,toSearch,myArray) {
+  for (var i=0; i<object.length; i++) {
+      var username = object[i].username;
+      if(username.indexOf(toSearch) != -1) {
+        myArray.push(object[i]);
+      }
+  };
+}
+
 
 var tagBuild = function (object,toSearch,myArray) {
   for (var i=0; i<object.length; i++) {

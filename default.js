@@ -14,6 +14,7 @@ $(document).ready(function() {
             var myData = JSON.parse(xhr.responseText);
             quoteBuilder(myData);
         })
+        $('.navbar-btn').removeClass("btn-success");
         $('#timelinebutton').addClass("btn-success");
     });
 // Search SECTION
@@ -127,9 +128,14 @@ $(document).ready(function() {
         $('#favoritequotes').addClass("hide");
         $('#yourquotes').removeClass("hide");
         $('#yourquoteresults').empty();
+        var myData = {
+          username: Cookies.get('username')
+        }
+        var payload = JSON.stringify(myData);
         var xhr = new XMLHttpRequest();
-        xhr.open('GET','/yourquotes');
-        xhr.send(null);
+        xhr.open('POST','/yourquotes');
+        xhr.setRequestHeader("Content-type","application/json");
+        xhr.send(payload);
         xhr.addEventListener('load',function(){
             var myData = JSON.parse(xhr.responseText);
             myquotes(myData);
