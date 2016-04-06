@@ -8,6 +8,49 @@ $(document).ready(function() {
       $('#loginarea').removeClass("hide");
       $('#signuparea').addClass("hide");
     })
+    //PASSWORD STRENGTH
+    $('#setuppassword').keyup(function(){
+      var password = $(this).val();
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST','/password');
+      xhr.setRequestHeader("Content-Type","application/json");
+      var myData = {
+        password:password
+      };
+      var payload = JSON.stringify(myData);
+      xhr.send(payload);
+      xhr.addEventListener('load',function(){
+        $("#bar").attr('aria-valuenow','0');
+        $("#bar").attr('style','width: 0%');
+        var scoredata = JSON.parse(xhr.responseText);
+        console.log(scoredata);
+        if(scoredata == 0) {
+          $('#bar').attr('class','progress-bar progress-bar-danger');
+          $('#bar').attr('aria-valuenow','10');
+          $('#bar').attr('style','width: 10%');
+        }
+          else if(scoredata == 1) {
+            $('#bar').attr('class','progress-bar progress-bar-warning');
+            $('#bar').attr('aria-valuenow','25');
+            $('#bar').attr('style','width: 25%');
+          }
+          else if(scoredata == 2) {
+            $('#bar').attr('class','progress-bar progress-bar-info');
+            $('#bar').attr('aria-valuenow','50');
+            $('#bar').attr('style','width: 50%');
+          }
+          else if(scoredata == 3) {
+            $('#bar').attr('class','progress-bar progress-bar-success');
+            $('#bar').attr('aria-valuenow','75');
+            $('#bar').attr('style','width: 75%');
+          }
+          else if(scoredata == 4) {
+            $('#bar').attr('class','progress-bar progress-bar-success');
+            $('#bar').attr('aria-valuenow','100');
+            $('#bar').attr('style','width: 100%');
+          }
+      })
+    });
 //LOGIN FEATURE
     $('#login').click(function(){
       //GET INFO READY TO PASS TO BACK-END

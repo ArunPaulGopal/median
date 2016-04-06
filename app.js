@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var jsonParser = require('body-parser').json();
+var zxcvbn = require('zxcvbn');
 
 app.use(express.static("./"));
 
@@ -8,6 +9,9 @@ app.get('/quotes', function(req, res) {
   res.json(allquotes);
 });
 
+app.post('/password', jsonParser, function(req, res) {
+  res.json(zxcvbn(req.body.password).score);
+});
 app.post('/login', jsonParser, function(req, res) {
   var status =[];
   userCheck(userinfo,req.body.username,req.body.password,status);
