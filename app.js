@@ -7,61 +7,72 @@ var port = process.env.PORT || 1337
 app.use(express.static("./"));
 
 app.get('/quotes', function(req, res) {
-  res.json(allquotes);
+  res.json(allQuotes);
 });
 
 app.post('/password', jsonParser, function(req, res) {
   res.json(zxcvbn(req.body.password).score);
 });
 
-app.post('/signup', function(req, res) {
+app.post('/signup', jsonParser, function(req, res) {
+  var newUser = User(req.body.username,req.body.password);
+  userInfo.push(newUser);
+  console.log(userInfo);
   res.json();
 });
 
 app.post('/login', jsonParser, function(req, res) {
   var status =[];
-  userCheck(userinfo,req.body.username,req.body.password,status);
+  userCheck(userInfo,req.body.username,req.body.password,status);
   res.json(status);
 });
 
 app.post('/yourquotes', jsonParser, function(req, res) {
   var quoteArray =[];
-  userBuild(userquotes,req.body.username,quoteArray);
+  userBuild(userQuotes,req.body.username,quoteArray);
   res.json(quoteArray);
 });
 
 app.post('/writequotes', jsonParser, function(req, res) {
-  userquotes.push(req.body);
+  userQuotes.push(req.body);
   res.json();
 });
 
 app.post('/searchquotes', jsonParser, function(req, res) {
   var results =[];
   var search = req.body.search.toLowerCase();
-  searchQuery(allquotes,search,results);
+  searchQuery(allQuotes,search,results);
   res.json(results);
 });
 
 app.post('/favquotes', jsonParser, function(req, res) {
-  favToggle(allquotes,req.body.favid);
+  favToggle(allQuotes,req.body.favid);
   res.json();
 });
 
 app.post('/favbuild', jsonParser, function(req, res) {
   var favArray =[];
-  favBuild(allquotes,favArray);
+  favBuild(allQuotes,favArray);
   res.json(favArray);
 });
 
 app.post('/tagquotes', jsonParser, function(req, res) {
   var tagArray =[];
-  tagBuild(allquotes,req.body.tagid,tagArray);
+  tagBuild(allQuotes,req.body.tagid,tagArray);
   res.json(tagArray);
 });
 
 app.listen(port,function(){
   console.log("listening on port" + port);
 })
+
+var User = function(username,password) {
+  return {
+    username: username,
+    password: password,
+    favorites: []
+  }
+}
 
 var userCheck = function (object,user,pw,myArray) {
   for (var i=0; i<object.length; i++) {
@@ -125,7 +136,7 @@ var favToggle = function (object,idtarget) {
   };
 };
 
-var allquotes = [
+var allQuotes = [
             {
                 quotetitle: "quote TITLE should return",
                 quotecontent: "We are what we repeatedly do. Excellence, therefore, is not an act but a habit.",
@@ -320,7 +331,7 @@ var allquotes = [
             }
 ];
 
-var userquotes = [
+var userQuotes = [
   {
       username: "Arun",
       quotetitle: "Age and Learning",
@@ -341,7 +352,7 @@ var userquotes = [
   }
 ];
 
-var userinfo = [
+var userInfo = [
   {
     username: "Arun",
     password: "G",

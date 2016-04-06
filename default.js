@@ -3,6 +3,8 @@ $(document).ready(function() {
     $('#signup').click(function(){
       $('#loginarea').addClass("hide");
       $('#signuparea').removeClass("hide");
+      $("#bar").attr('aria-valuenow','0');
+      $("#bar").attr('style','width: 0%');
     })
     $('#setup').click(function(){
       var username = $('#setupusername').val();
@@ -16,6 +18,10 @@ $(document).ready(function() {
       };
       var payload = JSON.stringify(myData);
       xhr.send(payload);
+      xhr.addEventListener('load',function(){
+        $('#setupusername').val('');
+        $('#setuppassword').val('');
+      })
       $('#loginarea').removeClass("hide");
       $('#signuparea').addClass("hide");
     })
