@@ -27,7 +27,7 @@
                   <input type="text" class="form-control" id="password" placeholder="G or F respectively, case sensitive!">
                 </div>
               </form>
-              <button class="btn btn-success btn-lg" id="login">Sign in to read Quotes!</button><hr>
+              <button class="btn btn-success btn-lg" id="login">Sign in!</button><hr>
               <button class="btn btn-success btn-lg" id="signup">Need an account? Sign up here!</button>
             </div>
             <div class="hide" id="signuparea">
@@ -46,8 +46,25 @@
                   <span class="sr-only">0% Complete</span>
                 </div>
               </div>
-              <button class="btn btn-success btn-lg hide" id="setup">Create your new account!</button>
+              <button class="btn btn-success btn-lg hide" id="setup">Back to Login</button>
+              <button class="btn btn-success btn-lg hide" id="goodpass">Create your new account!</button>
               <button class="btn btn-danger btn-lg" id="weakpass">Please enter a strong password!</button>
+              <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title text-success" id="signupModalLabel">Score!!!</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p class="text-success">Your account has been created! Login and read some quotes!</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
