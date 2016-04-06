@@ -103,7 +103,7 @@ $(document).ready(function() {
               Cookies.remove('username');
               Cookies.set('username',username);
               $('#searchquotes').toggleClass("hide");
-              $('#welcome').toggleClass("hide");
+              $('.welcome').toggleClass("hide");
               $('#navbar').toggleClass("hide");
               $('.navbar-btn').removeClass("btn-success");
               $('#searchbutton').addClass("btn-success");
@@ -118,7 +118,7 @@ $(document).ready(function() {
         $('#username').val('');
         $('#password').val('');
         $('.pagecontent').addClass("hide");
-        $('#welcome').removeClass("hide");
+        $('.welcome').removeClass("hide");
     });
 // SEARCH SECTION
   //Change appearance of DOM and buttons
