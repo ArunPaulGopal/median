@@ -5,6 +5,17 @@ $(document).ready(function() {
       $('#signuparea').removeClass("hide");
     })
     $('#setup').click(function(){
+      var username = $('#setupusername').val();
+      var password = $('#setuppassword').val();
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST','/signup');
+      xhr.setRequestHeader("Content-Type","application/json");
+      var myData = {
+        password:password,
+        username:username
+      };
+      var payload = JSON.stringify(myData);
+      xhr.send(payload);
       $('#loginarea').removeClass("hide");
       $('#signuparea').addClass("hide");
     })
@@ -23,31 +34,40 @@ $(document).ready(function() {
         $("#bar").attr('aria-valuenow','0');
         $("#bar").attr('style','width: 0%');
         var scoredata = JSON.parse(xhr.responseText);
-        console.log(scoredata);
         if(scoredata == 0) {
           $('#bar').attr('class','progress-bar progress-bar-danger');
           $('#bar').attr('aria-valuenow','10');
           $('#bar').attr('style','width: 10%');
+          $('#setup').addClass('hide');
+          $('#weakpass').removeClass('hide');
         }
           else if(scoredata == 1) {
-            $('#bar').attr('class','progress-bar progress-bar-warning');
+            $('#bar').attr('class','progress-bar progress-bar-danger');
             $('#bar').attr('aria-valuenow','25');
             $('#bar').attr('style','width: 25%');
+            $('#setup').addClass('hide');
+            $('#weakpass').removeClass('hide');
           }
           else if(scoredata == 2) {
-            $('#bar').attr('class','progress-bar progress-bar-info');
+            $('#bar').attr('class','progress-bar progress-bar-warning');
             $('#bar').attr('aria-valuenow','50');
             $('#bar').attr('style','width: 50%');
+            $('#setup').addClass('hide');
+            $('#weakpass').removeClass('hide');
           }
           else if(scoredata == 3) {
-            $('#bar').attr('class','progress-bar progress-bar-success');
+            $('#bar').attr('class','progress-bar progress-bar-info');
             $('#bar').attr('aria-valuenow','75');
             $('#bar').attr('style','width: 75%');
+            $('#setup').removeClass('hide');
+            $('#weakpass').addClass('hide');
           }
           else if(scoredata == 4) {
             $('#bar').attr('class','progress-bar progress-bar-success');
             $('#bar').attr('aria-valuenow','100');
             $('#bar').attr('style','width: 100%');
+            $('#setup').removeClass('hide');
+            $('#weakpass').addClass('hide');
           }
       })
     });

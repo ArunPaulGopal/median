@@ -12,7 +12,7 @@
 <body>
     <div class="container" id="welcome">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
           <div class="jumbotron text-center">
             <h1>"QUOTA"</h1>
             <div id="loginarea">
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                   <label for="setuppassword">Desired Password</label>
-                  <input type="text" class="form-control" id="setuppassword" placeholder="Choose a password!">
+                  <input type="password" class="form-control" id="setuppassword" placeholder="Choose a password!">
                 </div>
               </form>
               <div class="progress">
@@ -45,13 +45,14 @@
                   <span class="sr-only">0% Complete</span>
                 </div>
               </div>
-              <button class="btn btn-success btn-lg" id="setup">Create your new account!</button>
+              <button class="btn btn-success btn-lg hide" id="setup">Create your new account!</button>
+              <button class="btn btn-danger btn-lg" id="weakpass">Your password is too weak!</button>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
           <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

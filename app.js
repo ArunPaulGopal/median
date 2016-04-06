@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var jsonParser = require('body-parser').json();
 var zxcvbn = require('zxcvbn');
+var port = process.env.PORT || 1337
 
 app.use(express.static("./"));
 
@@ -12,6 +13,11 @@ app.get('/quotes', function(req, res) {
 app.post('/password', jsonParser, function(req, res) {
   res.json(zxcvbn(req.body.password).score);
 });
+
+app.post('/signup', function(req, res) {
+  res.json();
+});
+
 app.post('/login', jsonParser, function(req, res) {
   var status =[];
   userCheck(userinfo,req.body.username,req.body.password,status);
@@ -53,7 +59,9 @@ app.post('/tagquotes', jsonParser, function(req, res) {
   res.json(tagArray);
 });
 
-app.listen(8080);
+app.listen(port,function(){
+  console.log("listening on port" + port);
+})
 
 var userCheck = function (object,user,pw,myArray) {
   for (var i=0; i<object.length; i++) {
