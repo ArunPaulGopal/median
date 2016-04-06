@@ -3,8 +3,9 @@ $(document).ready(function() {
     $('#signup').click(function(){
       $('#loginarea').addClass("hide");
       $('#signuparea').removeClass("hide");
-      $("#bar").attr('aria-valuenow','0');
+      //Progress bar is reset if creating multiple accounts
       $("#bar").attr('style','width: 0%');
+      $("#bar").attr('aria-valuenow','0');
     })
     $('#setup').click(function(){
       var username = $('#setupusername').val();
@@ -19,13 +20,15 @@ $(document).ready(function() {
       var payload = JSON.stringify(myData);
       xhr.send(payload);
       xhr.addEventListener('load',function(){
+        //User/pw is reset if creating another account
         $('#setupusername').val('');
         $('#setuppassword').val('');
       })
       $('#loginarea').removeClass("hide");
       $('#signuparea').addClass("hide");
     })
-    //PASSWORD STRENGTH
+    //PASSWORD STRENGTH FEATURE
+    //As user types into the password field, keyup ensures latest password is being checked
     $('#setuppassword').keyup(function(){
       var password = $(this).val();
       var xhr = new XMLHttpRequest();
@@ -40,6 +43,8 @@ $(document).ready(function() {
         $("#bar").attr('aria-valuenow','0');
         $("#bar").attr('style','width: 0%');
         var scoredata = JSON.parse(xhr.responseText);
+        //As the score from the zxcvbn module changes, progress bar reflects score
+        //Submit account button is only available at password scores of 3 or 4
         if(scoredata == 0) {
           $('#bar').attr('class','progress-bar progress-bar-danger');
           $('#bar').attr('aria-valuenow','10');
@@ -79,7 +84,6 @@ $(document).ready(function() {
     });
 //LOGIN FEATURE
     $('#login').click(function(){
-      //GET INFO READY TO PASS TO BACK-END
         var username = $('#username').val();
         var password = $('#password').val();
         var myData = {
@@ -93,15 +97,16 @@ $(document).ready(function() {
         xhr.send(payload);
         xhr.addEventListener('load',function(){
             var newdata = JSON.parse(xhr.responseText);
-            //IF USERNAME AND PW HITS A MATCH IN BACK-END, 1 will be present
+            //The only possible value for newdata will be 1, if there is a match in the login post route.
             if (newdata[0] == 1) {
+              //Set Cookie to ensure new quotes that are written will be appended to the correct user object
               Cookies.remove('username');
               Cookies.set('username',username);
-              $('#writequotes').toggleClass("hide");
+              $('#searchquotes').toggleClass("hide");
               $('#welcome').toggleClass("hide");
               $('#navbar').toggleClass("hide");
               $('.navbar-btn').removeClass("btn-success");
-              $('#writebutton').addClass("btn-success");
+              $('#searchbutton').addClass("btn-success");
             }
             else{
               alert("Please try another PW attempt");
@@ -170,7 +175,7 @@ $(document).ready(function() {
           $(image).addClass('img-rounded thumbnail');
           image.setAttribute('src',imagesrc);
           $(media).addClass('media');
-          $(mediabody).addClass('media-body text-center');
+          $(mediabody).addClass('media-body text-center custom');
           $(medialeft).addClass('media-left');
           $(panel).addClass('panel panel-success');
           $(panelhead).addClass('panel-heading text-center');
@@ -260,7 +265,7 @@ $(document).ready(function() {
             image.setAttribute('src',imagesrc);
             $(image).addClass('img-rounded thumbnail');
             $(media).addClass('media');
-            $(mediabody).addClass('media-body text-center');
+            $(mediabody).addClass('media-body text-center custom');
             $(medialeft).addClass('media-left');
             $(panel).addClass('panel panel-success');
             $(panelhead).addClass('panel-heading text-center');
@@ -314,7 +319,7 @@ $(document).ready(function() {
                 image.setAttribute('src',imagesrc);
                 $(image).addClass('img-rounded thumbnail');
                 $(media).addClass('media');
-                $(mediabody).addClass('media-body text-center');
+                $(mediabody).addClass('media-body text-center custom');
                 $(medialeft).addClass('media-left');
                 $(panel).addClass('panel panel-success');
                 $(panelhead).addClass('panel-heading text-center');
@@ -369,7 +374,7 @@ $(document).ready(function() {
           $(image).addClass('img-rounded thumbnail');
           image.setAttribute('src',imagesrc);
           $(media).addClass('media');
-          $(mediabody).addClass('media-body text-center');
+          $(mediabody).addClass('media-body text-center custom');
           $(medialeft).addClass('media-left');
           $(panel).addClass('panel panel-success');
           $(panelhead).addClass('panel-heading text-center');

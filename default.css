@@ -8,5 +8,13 @@
 }
 
 .green {
-  background-color: lightgreen;
+  background-color: #00CC00;
+}
+
+.custom {
+  font-size: 22px;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
 }

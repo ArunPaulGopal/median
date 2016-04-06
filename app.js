@@ -1,9 +1,10 @@
+//MODULES
 var express = require('express');
 var app = express();
 var jsonParser = require('body-parser').json();
 var zxcvbn = require('zxcvbn');
 var port = process.env.PORT || 1337
-
+//EXPRESS ROUTES
 app.use(express.static("./"));
 
 app.get('/quotes', function(req, res) {
@@ -17,7 +18,6 @@ app.post('/password', jsonParser, function(req, res) {
 app.post('/signup', jsonParser, function(req, res) {
   var newUser = User(req.body.username,req.body.password);
   userInfo.push(newUser);
-  console.log(userInfo);
   res.json();
 });
 
@@ -65,7 +65,7 @@ app.post('/tagquotes', jsonParser, function(req, res) {
 app.listen(port,function(){
   console.log("listening on port" + port);
 })
-
+//FUNCTIONS TO BUILD OBJECTS AND ARRAYS USED IN FRONT-END CODE
 var User = function(username,password) {
   return {
     username: username,
@@ -135,7 +135,7 @@ var favToggle = function (object,idtarget) {
     };
   };
 };
-
+//DATA OBJECTS
 var allQuotes = [
             {
                 quotetitle: "quote TITLE should return",
