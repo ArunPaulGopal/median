@@ -4,9 +4,11 @@ $(document).ready(function() {
       $('#loginarea').addClass("hide");
       $('#signuparea').removeClass("hide");
       //Progress bar is reset if creating multiple accounts
-      $("#bar").attr('style','width: 0%');
-      $("#bar").attr('aria-valuenow','0');
+      $('#bar').attr('style','width: 0%');
+      $('#bar').attr('aria-valuenow','0');
+      $('#setup').addClass("hide");
     })
+    //Toggles Modal if password meets minimum strength and user confirms
     $('#goodpass').click(function(){
       $('#signupModal').modal('show');
       $('#goodpass').addClass('hide');
