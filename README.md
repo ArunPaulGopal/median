@@ -1,5 +1,5 @@
 # QUOTA
-<a href="https://dry-lowlands-16545.herokuapp.com/">Heroku Link</a>
+<strong><a href="https://dry-lowlands-16545.herokuapp.com/">Herok</a></strong><br>
 <img src="https://cloud.githubusercontent.com/assets/17255772/14509026/276cfe28-017f-11e6-94e8-5cc36d5e6163.png" width="30%"></img>
 <img src="https://cloud.githubusercontent.com/assets/17255772/14509028/2abb2596-017f-11e6-844c-83d32a701a31.png" width="30%"></img>
 <img src="https://cloud.githubusercontent.com/assets/17255772/14509031/2d42440c-017f-11e6-8866-b0d7ed094551.png" width="30%"></img>
